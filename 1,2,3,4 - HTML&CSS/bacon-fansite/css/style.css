@@ -1,0 +1,31 @@
+h1 {
+  color: tomato;
+  font-size: 64px;
+}
+
+img:hover{
+  background: gold;
+}
+
+
+/************************CLASS SELECTORS************************/
+.positive{
+  background-color: green;
+}
+
+
+
+.negative{
+  background-color: tomato;
+}
+
+.circular{
+  border-radius: 30%;
+}
+
+
+/************************ID SELECTORS************************/
+
+#heading{
+  color: blue; /* Overwrites h1 styling above */
+}

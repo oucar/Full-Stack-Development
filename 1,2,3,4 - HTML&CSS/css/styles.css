@@ -1,0 +1,18 @@
+/* selector{ property:value;} */
+
+body {
+  background-color: #e4f9f5;
+}
+
+hr {
+  background: none;
+  border-style:none;
+  border-top-style: dotted;
+  border-color: #40514e;
+  border-width: 5px;
+  width: 3%;
+}
+
+h1,h3{
+  color: #40514e;
+}
