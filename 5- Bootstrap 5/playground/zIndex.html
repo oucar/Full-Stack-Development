@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>zIndex</title>
+    <style>
+
+      /*      NATURAL ORDER     */
+      div{
+          height: 100px;
+          width: 100px;
+          border: 1px solid;
+          position: absolute;
+      }
+
+
+      .red{
+          background-color:red;
+
+      }
+
+      .yellow{
+          background-color:yellow;
+          left: 20px;
+          top: 20px;
+      }
+
+      .blue{
+          background-color:blue;
+          left:40px;
+          top:40px;
+      }
+
+
+      /*    Z  INDEX     */
+    </style>
+  </head>
+  <body>
+    <p>zIndex only works if there is positioning.</p>
+
+
+      <div class="red">Hey</div>
+      <div class="yellow">Hey</div>
+      <div class="blue">Hey</div>
+
+
+
+  </body>
+</html>
