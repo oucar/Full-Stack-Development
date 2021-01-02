@@ -93,7 +93,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .custom-icon:hover {
   color: #ff4c68;
+  transition: 0.3s;
 }
+
 
 .feature-box {
   padding: 5%;
@@ -141,6 +143,10 @@ h1, h2, h3, h4, h5, h6 {
 #pricing {
 }
 
+.non-priority{
+  text-decoration: line-through;
+}
+
 .header-pricing {
   margin: 5% 0 1%;
   font-size: 3rem;
@@ -157,6 +163,25 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 0;
 }
 
+.card-body{
+  height: 25rem;
+}
+
+.card-body:hover {
+  background-color:#f7f7f7;
+  transition: 0.7s;
+}
+
+.btn-usual{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  bottom: 5%;
+}
+
 /* Call to Action */
 #cta {
   background-color: #ff4c68;
@@ -171,6 +196,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .social-icon {
   margin: 3% 2%;
+  color: #8F8F8F;
+  transition: 0.3s;
+}
+
+.social-icon:hover{
+  color: #FF4C68;
 }
 
 @media (max-width:1028px) {
