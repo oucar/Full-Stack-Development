@@ -108,3 +108,32 @@ function bmiCalculator(weight, height){
     var bmi = weight/(height*height);
     return Math.round(bmi);
 }
+
+
+/*Random*/
+
+// Love score
+var yourName = prompt("Your name: ");
+var herName = prompt("Her name: ");
+
+var loveScore = Math.random() * 100;
+loveScore = Math.floor(loveScore) +1;
+console.log(loveScore);
+
+if(loveScore < 30){
+  alert("She doesn't like you. " + loveScore + "%.");
+}
+
+else if (loveScore < 75) {
+  alert("Uhmmm.. Maybee?.. " + loveScore + "%.");
+}
+
+else{
+  alert("She loves you! " + loveScore + "%.");
+}
+
+//Dice
+var n = Math.random();
+n = n *6;
+n = Math.floor(n) +1;
+console.log(n);
