@@ -80,3 +80,31 @@ function getMilk(bottles) {
 }
 
 getMilk(45);
+
+
+/* Life in days coding challange*/
+function lifeInWeeks(age) {
+
+    var yearsRemaining = 90 - age;
+    var days = yearsRemaining * 365;
+    var weeks = yearsRemaining * 52;
+    var months = yearsRemaining * 12;
+
+    console.log("You have " + days + " days, " + weeks + " weeks, and " + months + " months left.");
+
+}
+
+/* Returning */
+
+function getMilk(money){
+  return (money % 5);
+}
+
+var onur = getMilk(24); // has the value of 4.
+
+/* BMI CALCULATOR challange*/
+function bmiCalculator(weight, height){
+
+    var bmi = weight/(height*height);
+    return Math.round(bmi);
+}
