@@ -198,3 +198,39 @@ function fizzBuzz(){
 
   }
 }
+
+// fibonacci
+function fibonacciGenerator (n) {
+//Do NOT change any of the code above 👆
+
+    var i = 0;
+    var first = 0, second = 1;
+    var fib = [];
+
+    if ( n === 1){
+        fib.push(first);
+    } else if ( n === 2){
+        fib.push(first);
+        fib.push(second);
+    } else {
+        fib.push(first);
+        fib.push(second);
+
+        while(i+2 < n) {            // first and second already covered above!
+
+            var third = first + second;
+            fib.push(third);
+
+            first = second;
+            second = third;
+            i++;
+
+        }//end while
+    }
+
+    return fib;
+
+    //Return an array of fibonacci numbers starting from 0.
+
+//Do NOT change any of the code below 👇
+}
