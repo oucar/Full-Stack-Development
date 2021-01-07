@@ -140,3 +140,12 @@ console.log(n);
 
 
 /* Arrays */
+var eggs = [0,1,2,3,4,5,6];
+var myEgg = eggs[1];
+eggs.length; // 7
+
+var guestList = ["Onur", "Ozgur", "Ali", "Veli", "Esek"];
+console.log(guestList);
+console.log(guestList.length);
+console.log(guestList[0] + " " + guestList[1])
+console.log(guestList.includes("Onur")); // check if it's in the list
