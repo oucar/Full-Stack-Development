@@ -149,3 +149,52 @@ console.log(guestList);
 console.log(guestList.length);
 console.log(guestList[0] + " " + guestList[1])
 console.log(guestList.includes("Onur")); // check if it's in the list
+guestList.push("Halime"); //adds
+guestList.pop("Onur"); //removes
+
+
+var nameGiven =  prompt("What is your name?");
+if(guestList.includes(nameGiven)){
+  alert("We have been waiting for you!");
+} else{
+alert("Who the hell are you man?");
+}
+
+
+// fizzbuzz problem -- using for loop
+for(var i = 1; i < 100; i++){
+
+    if(i % 15 === 0){
+      console.log("FizzBuzz");
+    } else if( i % 5 === 0 ){
+      console.log("Buzz");
+    } else if( i % 3 === 0){
+      console.log("Fizz");
+    } else {
+      console.log(i);
+    }
+
+}
+
+//fizzbuzz problem -- using array.
+var output = [];
+var count = 1;
+
+function fizzBuzz(){
+
+  while(count <= 100){
+
+    if(count % 15 === 0){
+      output.push("FizzBuzz");
+    } else if( count % 5 === 0 ){
+      output.push("Buzz");
+    } else if( count % 3 === 0){
+      output.push("Fizz");
+    } else {
+      output.push(count);
+    }
+    count++;
+    console.log(output);
+
+  }
+}
