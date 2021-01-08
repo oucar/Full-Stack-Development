@@ -1,50 +1,40 @@
-/*
-  Created by the browser when a web page is loaded.
-
-var titles = document.getElementsByClassName("title");
-console.log(Array.isArray(titles));             // not an array
-
-console.log(Array.isArray(Array.from(titles))); // now it's an array
-
-Array.from(titles).forEach((item, i) => {       // or simply use a for loop using titles.length
-  console.log(item);
+// Event Bubbling -- Deleting
+const list = document.querySelector("#book-list ul");
+list.addEventListener('click', function(e) {
+  if (e.target.className == 'delete') {
+    const li = e.target.parentElement;
+    li.parentNode.removeChild(li); // or simply list.removeChild(li);
+  };
 });
 
------- QUERY SELECTOR ------
-const wrap = document.querySelector("#wrapper");
-console.log(wrap);
+// Fetch the 'add-book' form
+const addForm = document.forms['add-book']; // you add the event listener to the form, not to the button.
+addForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const value = addForm.querySelector('input[type="text"]').value;
 
-const wmf = document.querySelector("#book-list li:nth-child(2) .name");     // Important!!!
-console.log(wmf);
+  // create elements
+  const li = document.createElement('li');
+  const bookName = document.createElement('span');
+  const deleteButton = document.createElement('span');
 
-var books = document.querySelectorAll("#book-list li .name");               // Use this method if it returns html list.
-Array.from(books).forEach((item, i) => {
-  console.log(item);
+  // add content
+  deleteButton.textContent = 'delete';
+  bookName.textContent = value;
+
+  // add classes
+  // var li = document.querySelector('li:last-child');
+  // var book = document.querySlector('li:first-child.name');
+  //book.getAttribute('class');
+  //book.setAttribute('class', ''name-2);
+  bookName.classList.add('name');
+  deleteButton.classList.add('delete')
+
+  // append spans to the li, then append li to the document (see the dom tree)
+  li.appendChild(bookName);
+  li.appendChild(deleteButton);
+  list.appendChild(li); // line 2
+
+;
+
 });
-
------- CHANGING TEXT IN HTML ------
-var books = document.querySelectorAll("#book-list li .name");     // Returns a nodelist. So actually no need to use Array.from... in this situation
-books.forEach((book, i) => {
-  console.log(book.textContent);
-  book.textContent += " :)";
-});
-
-const bookList = document.querySelector("#book-list");
-bookList.innerHTML = "<h2>Books and more books!</h2>" // not recommended...
-bookList.innerHTML += "<p>This is how you add p! </p>";
-
------- NODE ------
-
-
-*/
-const banner = document.querySelector("#page-banner");
-console.log("#page-banner node types is:",banner.nodeType);   // W3 Schools
-console.log("#page-banner node name is:",banner.nodeName);
-console.log("#page-banner node has child nodes:",banner.hasChildNodes());
-
-const clonedBanner = banner.cloneNode(true);        // if you pass value, it doesn't include childs.
-console.log(clonedBanner);
-
-
-
-// Left: https://www.youtube.com/watch?v=YIG2_UB-C7o&list=PL4cUxeGkcC9gfoKa5la9dsdCNpuey2s-V&index=6
