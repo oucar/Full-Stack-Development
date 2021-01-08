@@ -38,3 +38,32 @@ addForm.addEventListener('submit', function(e) {
 ;
 
 });
+
+// hide Books
+const hideBox = document.querySelector("#hide");
+hideBox.addEventListener('change', function(e){
+
+  if(hideBox.checked){
+    list.style.display = "none";
+  } else {
+    list.style.display = "initial"; //or block
+  }
+
+});
+
+// filter Books
+const searchBar = document.forms['search-books'].querySelector('input');
+searchBar.addEventListener('keyup', function(e){
+  const term = e.target.value.toLowerCase();
+  const books = list.getElementsByTagName('li');
+
+  Array.from(books).forEach((book) => {                // make sure you use Array.from (because it's an html collection)
+    const title = book.firstElementChild.textContent;  // span name
+    if(title.toLowerCase().indexOf(term) != -1 ){
+      book.style.display = "block";
+    } else {
+      book.style.display = "none";
+    }
+  });
+
+});
