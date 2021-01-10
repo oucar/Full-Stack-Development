@@ -1,0 +1,28 @@
+/* CONTAINERS */
+/* container.html */
+
+[class^="container"] {                  
+    padding: 1rem;
+    background-color: tomato;
+    border: 2px solid white;
+    color: #fff;
+    text-align: center;
+}
+
+/* ROW, COLUMN AND CONTAINER - Grid System */
+/* rowColumn.html */
+
+[class^="col"] {
+    padding: 1rem;
+    background-color: dodgerblue;
+    border: 2px solid white;
+    color: #fff;
+    text-align: center;
+}
+
+[class^="row"] {
+    padding: 1rem;
+    background-color: rgb(192, 212, 207);
+    color: #fff;
+    text-align: center;
+}
