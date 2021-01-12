@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Form Demo</h1>
+    <form action="/search/">
+
+        <p>use id and for togeter in label and input!</p>
+        <p>name="something" --> you submit something to the server</p>
+
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="username" placeholder="username" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password" placeholder="your dummy password" minlength="8" maxlength="16" required>
+
+        <label for="num">Number:</label>
+        <input type="number" name="num" id="num" min="1" max="100">
+
+        <hr>
+
+        <label for="shoes">Shoes</label>
+        <input type="checkbox" name="footwear" id="shoes">
+
+        <label for="sandals">Sandals</label>
+        <input type="checkbox" name="footwear" id="sandals">
+
+        <hr>
+
+        <p>their names should be connected!</p>
+
+        <label for="s">Small</label>
+        <input type="radio" name="size" id="s" value="sSent">
+
+        <label for="m">Medium</label>
+        <input type="radio" name="size" id="m" value="mSent">
+
+        <label for="l">Large</label>
+        <input type="radio" name="size" id="l" value="lSent">
+
+        <hr>
+
+        <label for="meal">Meal type: </label>
+        <select name="meal" id="meal">
+            <option value="fish" selected>Fish</option>
+            <option value="veg">Vegeterian</option>
+            <option value="steak">Steak</option>
+        </select>
+
+        <hr>
+
+        <label for="request">Any special request? </label><br>
+        <textarea name="request" id="req" cols="30" rows="10" placeholder="your text..."></textarea>
+
+        <hr>
+
+        <button>Click me! (submits by default)</button>
+        <button type="button">Click me! (type="button")</button>
+
+    
+    </form>
+
+
+</body>
+
+</html>
