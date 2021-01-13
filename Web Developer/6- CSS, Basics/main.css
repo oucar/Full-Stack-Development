@@ -1,0 +1,27 @@
+/* Text Properties */
+body{
+    text-align:center;
+}
+
+h1,h3 {
+    color : teal;
+    background-color:blanchedalmond;
+    font-weight: normal;
+    letter-spacing: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   /*fallback fonts, if one is not available try the next one*/
+
+}
+
+h1:hover, h3:hover{
+    color:tomato;
+}
+
+
+p{
+    text-decoration: tomato underline wavy;
+    line-height: 2.5rem;
+}
+
+a{
+    text-decoration: none;
+}
