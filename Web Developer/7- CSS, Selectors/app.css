@@ -15,6 +15,7 @@ h1,h2 {
     color: #1d3557;
 }
 
+/*          CLASS, ID SELECTORS             */
 #signup{
     background-color: #1d3557;
     color: #f1faee;
@@ -23,6 +24,8 @@ h1,h2 {
 span {
     color: #457b9d;
 }
+
+/*          DESCENDENT SELECTORS            */
 
 .tag {
     background-color: #e63946;
@@ -40,22 +43,31 @@ footer a {
     color: #e63946;
 }
 
+/*           ADJACENT SELECTORS              */
 h2 + button {
     font-size: 20px;
 }
 
+/*             DIRECT CHILD                  */
 footer > a {
     color: #457b9d;
 }
 
+/*          ATTRIBUTE SELECTORS                */
 input[type="password"] {
     color: greenyellow;
+}
+
+input[type="text"]{
+    color:tomato;
 }
 
 a[href*="google"]{
     color: #1d3557;
 }
 
+
+/*          PSUEDO CLASSES (:)         */
 
 .post a:hover {
     text-decoration: underline;
@@ -66,10 +78,12 @@ a[href*="google"]{
     background-color: #02c39a;
 }
 
+/*          EVERY EVEN NUMBER     !! */
 .post:nth-of-type(2n){
     background-color: #dfe8dc;
 }
 
+/*          PSUEDO ELEMENTS (::)  --> Selects particular size of an element       */
 h2::first-letter {
     font-size: 50px;
 }
@@ -82,15 +96,20 @@ p::selection {
     background-color: #fcbf49;
 }
 
+/*  They both have background color, but this one will win because it's more specific! */ 
 .post button:hover {
-    background-color: #e63946;
-    color: #f1faee;
+    background-color: #e63946;              /*   background color */
+    color: #f1faee;                         /* text color */
 }
 
 button:hover {
     background-color: olive;
 }
 
+/*          Cascade    -- Order matters      */
 button {
-    background-color: magenta !important;
+    background-color: magenta !important;               /*      Specificity, wins automatically ! */
 }
+
+/* Inline styles are more specific than everything else! but not recommended*/
+/* ID > Class > Elements */
