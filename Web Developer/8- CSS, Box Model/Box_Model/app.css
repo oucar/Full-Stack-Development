@@ -1,0 +1,43 @@
+body{
+    margin:0px; /* Start with margin 0! */
+}
+
+div{
+    width: 200px;
+    height: 200px;
+    border-radius: 4%;
+    margin: 50px 50px 50px;
+}
+
+h1{
+    padding-top:50px;
+    padding-left:100px;
+    background-color: tomato;
+}
+
+#one{
+    background-color:azure;
+
+    /*          BORDER       */                         /*border: medium dashed green;  -- thickness, style, color*/
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    box-sizing: border-box;         /* won't be greater than 200px*200px*/
+} 
+
+#two{
+    background-color:tomato;
+    border-color:black;
+    border-style:dotted;
+    box-sizing: border-box;
+
+    border-left-style: solid;
+    border-left-width: 10px;
+}
+
+#three{
+    background-color:blueviolet;
+    border-color:black;
+    border-style:dashed;
+    box-sizing: border-box;
+}
