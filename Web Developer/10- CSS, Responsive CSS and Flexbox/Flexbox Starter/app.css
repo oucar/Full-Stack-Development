@@ -1,0 +1,84 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    text-align: center;
+}
+
+#container {
+    background-color: #003049;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+
+    /* Flex */
+    display: flex;
+
+    /*
+        row, row-reverse, column, column-reverse
+    */
+    flex-direction: row;    /* row by default, in this example (flex-direction: column) main axis is column. so flex-end will push them to the bottom */ 
+
+
+    /*
+        flex-start, flex-end
+        center;                 --> centers
+        space-between;          --> leaves space between elements 
+        space-around;           --> leaves space between elements and between elements and their parents
+        space-evenly;           --> same as space-around, but more evenly
+    
+    */
+    justify-content: center;        /* flex-start by default*/
+
+
+    /*
+        wrap, wrap-reverse
+        if their parent is bigger than all of their sizes, they split around
+        !!!wrap changes the main axis (from row to column, or from column to row)
+    */
+
+    flex-wrap: wrap;
+
+    /*
+        IF THERE'S WRAP, USE WRAP + align content
+        IF THERE'S NO WRAP, USE ALIGN-ITEMS: CENTER!
+
+        align-items: in the cross axis!!
+        justify-content: in the main axis!!
+
+        flex-start, flex-end, center,
+        baseline --> useful for writing on divs : https://stackoverflow.com/questions/34606879/whats-the-difference-between-flex-start-and-baseline
+    */
+    align-items:   center;
+
+    /*
+
+        align content works if there's wrap or wrap reverse!
+        space-between, space-around, flex-start, flex-end, center
+
+    */
+
+    /*align-content: flex-start;*/          /*center, puts them together*/
+}
+
+/*  Positions one indiviual element.
+    Doesn't work if align-content used.
+
+*/
+div:nth-of-type(3){
+    align-self: flex-end;
+}
+
+div:nth-of-type(2){
+    align-self: flex-start;
+}
+
+
+
+#container div{
+    width: 60px;
+    height: 200px;
+}
+/*
+
