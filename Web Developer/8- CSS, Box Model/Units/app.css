@@ -1,6 +1,16 @@
+/*
+1em = 1*(font-size of the parent)
+rem = depends on the root element, so you maintain the ratio (onky html{font-size:10px} etc affects it.)
+
+rem is way better than em!
+
+*/
+
+
 html {
     font-size: 30px;
 }
+
 #percentages {
     background-color: #6d6875;
     width: 800px;

@@ -1,0 +1,46 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: #3d405b;
+    border: 2px solid black;
+    margin: 10px;
+    display: inline-block;
+}
+
+
+#middle {
+    background-color: #81b29a;
+}
+
+/* Static */
+#static #middle {
+    position: static;
+    top: 100px;
+}
+
+/* Relative to where normally it would be */
+#relative #middle {
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+/* Removes from the normal document flow */
+#absolute {
+    position: relative;
+}
+
+/* Make sure you set position of its parent to relative */
+
+#absolute #middle {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+}
+
+/* Removes from the document flow */
+#fixed #middle {
+    position: fixed;
+    top: 0;
+    left: 400px;
+}
