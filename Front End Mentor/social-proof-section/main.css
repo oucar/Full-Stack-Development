@@ -53,7 +53,7 @@ table {
 body{
 
     font-family: 'Spartan', sans-serif;
-    margin: 1.5% 10%;
+    margin: 1% 10%;
     background-color: #f0f0f0;
     overflow: hidden;
     box-sizing: border-box;
@@ -259,14 +259,13 @@ main{
     }
 
     body{
-        position: relative;
         margin:0;
         padding: 0;
     }
 
     main{
-        padding: 2rem 0;
-        position: static;
+        padding: 3rem 0.5rem;
+        position: relative;
         box-shadow: none;
     }
 
@@ -287,8 +286,6 @@ main{
         left: 0;
     }
 
-
-
     .heading{
         display: flex;
         flex-direction: column;
@@ -296,18 +293,29 @@ main{
         text-align: center;
     }
 
+    .heading-intro{
+        width: 90%;
+    }
+
     .heading-header{
         font-size: 2rem;
     }   
 
     .rating-cards{
-        width: 100%;
+        width: 95%;
         align-items: center;
     }
 
     .rating-card-element{
+        flex-direction: column;
         justify-content: center;
+        padding: 1rem 0;
     }
+
+    .rating-star{
+        margin-bottom:1rem;
+    }
+
 
     .rating-card-element:nth-child(3){
         align-self: center;
@@ -326,7 +334,8 @@ main{
     }
 
     .footer{
-        bottom: 0.1rem;
+        bottom: 1.2rem;
+        width: 300px;
     }
 
 }

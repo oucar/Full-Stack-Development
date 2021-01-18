@@ -1,0 +1,9 @@
+.btn-primary{
+    background-color: tomato;
+    border-color: black;
+}
+
+.btn-primary:hover{
+    background-color:coral;
+    border-color: black;
+}

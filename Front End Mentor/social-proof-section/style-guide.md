@@ -9,7 +9,7 @@ The designs were created to the following widths:
 
 ## Colors
 
-### Primary
+### Primary!
 
 Very Dark Magenta: hsl(300, 43%, 22%)
 Soft Pink: hsl(333, 80%, 67%)
