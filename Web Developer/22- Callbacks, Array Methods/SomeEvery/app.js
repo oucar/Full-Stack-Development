@@ -1,3 +1,5 @@
+// RETURNS TRUE OR FALSE
+
 const exams = [80, 98, 92, 78, 77, 90, 89, 84, 81, 77]
 
 exams.every(score => score >= 75)
@@ -52,3 +54,9 @@ const movies = [
 
 
 movies.some(movie => movie.year > 2015)
+
+movies.every(movie => movie.year > 2000);       // false
+
+
+// if array contains all even numbers, return true. Otherwise, return false.
+const allEvens = (arr) => arr.every(num => num % 2 === 0);
