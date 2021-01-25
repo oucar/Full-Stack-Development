@@ -1,3 +1,5 @@
+// In order to make a new subset.
+
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
 numbers.filter(n => {
@@ -56,10 +58,17 @@ const movies = [
 
 
 const badMovies = movies.filter(m => m.score < 70)
-
 const recentMovies = movies.filter(m => m.year > 2000)
+const goodMovies = movies.filter(m => m.score > 80)
+for (movie of goodMovies) {
+    console.log(movie.title)
+}
 
-// const goodMovies = movies.filter(m => m.score > 80)
-// const goodTitles = goodMovies.map(m => m.title)
+// But you usually want to store every attribute of these.
+const goodTitles = movies.filter(m => m.score > 80).map(m => m.title);
+for(movie of goodTitles){
+    console.log(movie);
+}
 
-movies.filter(m => m.score > 80).map(m => m.title);
+// returns names with size > 10
+const validUserNames = (names) => names.filter(n => n.length < 10);
