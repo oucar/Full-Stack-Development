@@ -1,7 +1,7 @@
 const person = {
     firstName: 'Viggo',
     lastName: 'Mortensen',
-    fullName: function () {
+    fullName: function () {                                     // try these within objects!!
         return `${this.firstName} ${this.lastName}`
     },
     shoutName: function () {

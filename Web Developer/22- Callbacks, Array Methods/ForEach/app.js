@@ -35,3 +35,5 @@ movies.forEach(function (movie) {
     console.log(`${movie.title} - ${movie.score}/100`)
 })
 
+
+// for(movie of movies){console.log(movie.title)}
