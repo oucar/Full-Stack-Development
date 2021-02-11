@@ -1,0 +1,59 @@
+// Default values for the functions
+
+function showMessage(from, text = "no text given") {
+  alert( from + ": " + text );
+}
+
+showMessage("Ann"); // Ann: no text given
+
+
+// or an alternative and a better way
+function showMessage(text) {
+  if (text === undefined) {
+    text = 'empty message';
+  }
+
+  alert(text);
+}
+
+showMessage(); // empty message
+
+//It is possible to use return without a value. That causes the function to exit immediately.
+function showMovie(age) {
+  if ( !checkAge(age) ) {
+    return;
+  }
+
+  alert( "Showing you the movie" ); // (*)
+  // ...
+}
+
+// is else really required? 
+function checkAge(age) {
+  if (age > 18) {
+    return true;
+  }
+  // ...
+  return confirm('Did parents allow you?');
+}
+
+// urinary operator example:
+function checkAge(age) {
+  return (age > 18) ? true : confirm('Did parents allow you?');
+}
+
+// function expression vs function declaration
+// declaration
+function sayHi() {
+  alert( "Hello" );
+}
+// expression (more eye-catching!!) NOTICE THAT THERE'S A SEMICOLON AT THE END
+let sayHi = function() {
+  alert( "Hello" );
+};
+
+
+// ARROW FUNCTIONS
+
+
+
