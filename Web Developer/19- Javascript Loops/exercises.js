@@ -46,12 +46,39 @@ let reverseString = (string) =>{
 let removeFromArray = (arrayGiven, element) => {
 
 	let index = arrayGiven.indexOf(element);
-	arrayGiven.splice(element,1);
+	arrayGiven.splice(index,1);
 	return arrayGiven;				// make sure you return the new array!!
 
 };
 
+// sumAll()
+let sumAll = (start, end) => {
+
+	let sum = 0;
+	for(let i = start; i <= end; i++){
+		sum = sum + i;
+	}
+
+	return sum;
+
+};
+
+// sumAllRecursion()
+let sum = 0;
+let sumAllRecursion = (start, end) => {
+
+	if(start === end) return sum;
+
+	sum = sum + start;
+	return sumAllRecursion(start+1, end);
+
+}
+
 // leapYear
+function leapYear(year)
+{
+  return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+}
 
 
 
