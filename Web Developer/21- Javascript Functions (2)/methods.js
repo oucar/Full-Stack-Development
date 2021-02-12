@@ -20,7 +20,6 @@ const coolMath = {
 
 // THERE'S A SHORTHAND!
 
-
 const newCoolMath = {
     PI: 3.14,
     square(num){

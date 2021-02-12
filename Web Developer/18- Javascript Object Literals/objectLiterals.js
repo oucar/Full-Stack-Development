@@ -17,10 +17,12 @@ const person = {
 person.firstName;           // Onur
 person['firstName'];        // Onur
 
+
 const years = {
     1999    : 'GOOD',
     2020    : 'BAD'
 }
+
 
 years[1999];                // 'GOOD'
 
@@ -59,6 +61,7 @@ midterms['antonio'] = 20;           // one more!
 
 
 /* ARRAYS AND OBJECTS */
+// below is an array of objects
 
 const shoppingCart = [
     {
@@ -79,6 +82,7 @@ const shoppingCart = [
 ]
 
 shoppingCart[1].product;            // Echo Dot
+
 
 // this is an object 
 const student = {

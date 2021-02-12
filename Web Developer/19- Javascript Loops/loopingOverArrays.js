@@ -7,6 +7,7 @@ for (let i = 0; i < animals.length; i++) {
 const student = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
 let counter = 1;
 
+
 for(let i = 0; i < student.length; i++){
 
     if(i%3===0){
