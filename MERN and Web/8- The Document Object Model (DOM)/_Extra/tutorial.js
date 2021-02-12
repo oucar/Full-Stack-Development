@@ -1,5 +1,5 @@
-/*
-  Created by the browser when a web page is loaded.
+
+//Created by the browser when a web page is loaded.
 
 var titles = document.getElementsByClassName("title");
 console.log(Array.isArray(titles));             // not an array
@@ -10,7 +10,7 @@ Array.from(titles).forEach((item, i) => {       // or simply use a for loop usin
   console.log(item);
 });
 
------- QUERY SELECTOR ------
+//------ QUERY SELECTOR ------
 const wrap = document.querySelector("#wrapper");
 console.log(wrap);
 
@@ -22,7 +22,7 @@ Array.from(books).forEach((item, i) => {
   console.log(item);
 });
 
------- CHANGING TEXT IN HTML ------
+//------ CHANGING TEXT IN HTML ------
 var books = document.querySelectorAll("#book-list li .name");     // Returns a nodelist. So actually no need to use Array.from... in this situation
 books.forEach((book, i) => {
   console.log(book.textContent);
@@ -33,7 +33,7 @@ const bookList = document.querySelector("#book-list");
 bookList.innerHTML = "<h2>Books and more books!</h2>" // not recommended...
 bookList.innerHTML += "<p>This is how you add p! </p>";
 
------- NODE ------
+//------ NODE ------
 const banner = document.querySelector("#page-banner");
 console.log("#page-banner node types is:",banner.nodeType);   // W3 Schools
 console.log("#page-banner node name is:",banner.nodeName);
@@ -42,7 +42,7 @@ console.log("#page-banner node has child nodes:",banner.hasChildNodes());
 const clonedBanner = banner.cloneNode(true);        // if you pass value, it doesn't include childs.
 console.log(clonedBanner);
 
-------TRAVERSING THE DOM ------
+//------TRAVERSING THE DOM ------
 // BOTTOM TO TOP (FROM ELEMENT TO ITS PARENTS)
 const bookList = document.querySelector("#book-list"); // from this to its parents.
 console.log("the parent node is: ", bookList.parentNode);
@@ -89,7 +89,7 @@ link.addEventListener('click', function(e){
   console.log("navigation to", e.target," was prevented.");
 })
 
-------CHANGE ATTRIBUTES ------
+//------CHANGE ATTRIBUTES ------
 var li = document.querySelector('li:last-child');
 var book = document.querySlector('li:first-child.name');
 book.getAttribute('class');
@@ -97,4 +97,4 @@ book.setAttribute('class', ''name-2);
 book.hasAttribute('class');
 book.hasAttribute('href');
 book.removeAttribute('class');
-*/
+

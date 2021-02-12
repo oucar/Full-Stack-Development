@@ -6,6 +6,11 @@ numbers.filter(n => {
     return n < 10
 })
 
+let filteredNums = numbers.filter(n => {
+	return n<10;
+})
+
+
 
 const movies = [
     {
