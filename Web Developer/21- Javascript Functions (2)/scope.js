@@ -3,14 +3,15 @@
 
 /*          FUNCTION SCOPE          */
 let newTotalEggs = 0;
-function collectEgges(){
+
+function collectEggs(){
     let totalEggs = 6;
     newTotalEggs =10;
     console.log(totalEggs); // 6
 }
 
 console.log(totalEggs);     // not defined! error!
-collectEgges();             // maybe now it runs?
+collectEggs();             // maybe now it runs?
 console.log(totalEggs);     // still not defined!!
 
 console.log(newTotalEggs);  // always works!
