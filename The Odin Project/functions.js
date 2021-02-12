@@ -20,6 +20,7 @@ let sayHi = function() {
   alert( "Hello" );
 };
 
+
 //declaration
 function sayHi() {
   alert( "Hello" );

@@ -14,10 +14,12 @@ animal.length;      // 3;
     .slice(0,3);          // between 0 and 3
     .slice(5);            // starting from 5 to all the way to end
     .replace('onur', 'haha');   // replaces onur with haha
+
 */
 
 let str = `I counted ${3+4} sheep`;             // BACKTICK!            --> String literal
 Math.floor(Math.random() * 10);     // returns a random integer from 0 to 9 
+
 
 /* 
 NULL:       Intentional absence of any value, must be assigned.
