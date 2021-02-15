@@ -34,6 +34,7 @@ secondImg.setAttribute('style', 'border: 25px solid tomato;');
 
 // SELECTING BY ATTRIBUTE
 const java = document.querySelector('a[title="Java"]');
+const checkbox = document.querySelector("input[type='checkbox']")
 java.setAttribute('style', 'color:red;')
 
 
