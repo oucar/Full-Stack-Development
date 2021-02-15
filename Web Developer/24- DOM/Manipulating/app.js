@@ -32,3 +32,61 @@ for (let link of allLinks) {
     link.style.textDecorationColor = 'magenta';
     link.style.textDecorationStyle = 'wavy';
 }
+
+// MANIPULATING CLASSES
+const h2 = document.querySelector('h2');
+h2.classList.add('purple');
+h2.classList.add('border');
+h2.classList.remove('border');
+
+h2.classList.toggle('purple');
+h2.classList.toggle('purple');      // toggling is the best option
+h2.getAttribute('class');
+
+// TRAVERSING
+const paragraph = document.querySelector('p');
+paragraph.parentElement;            // parent of p
+paragraph.children;                 // HTMLCollection(8) [b, b, a, a, a, a, a, a]
+paragraph.children[0];              // <b> Silkie </b>
+paragraph.childElementCount;        // 8
+
+
+const squareImg = document.querySelector('.square');
+squareImg.parentElement;            // body
+squareImg.childElementCount;        // 0
+
+squareImg.nextElementSibling;       // OTHER IMG (previousSibling and nextSibling sometimes return empty text, don't use them)
+squareImg.previousElementSibling;   // previous sibling, which is p
+
+
+// creating new element and appending
+//APPEND CHILD
+const newImg = document.createElement('img');
+newImg.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/Male_Silkie.png/460px-Male_Silkie.png');
+newImg.classList.add('square');
+document.body.appendChild(newImg);
+
+const newH3 = document.createElement('h3');
+newH3.innerText = "I am new here!";
+document.body.appendChild(newH3);
+
+// APPEND
+const p = document.querySelector('p');
+p.append('yaaay! I am new here too and you can add just add me at the end of the paragraph!', ' more than one thing!')
+
+
+
+//PREPEND
+const newB = document.createElement('b');
+newB.append('HELLO!!');
+p.prepend(newB);
+
+//SIBLING
+const siblingH1 = document.createElement('h1');
+siblingH1.append('THIS IS THE SIBLING H1');
+h1.insertAdjacentElement('beforebegin', siblingH1);         // beforebegin, afterbegin, beforeend, afterend
+
+
+
+
+
