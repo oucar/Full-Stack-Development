@@ -43,6 +43,7 @@ h2.classList.toggle('purple');
 h2.classList.toggle('purple');      // toggling is the best option
 h2.getAttribute('class');
 
+
 // TRAVERSING
 const paragraph = document.querySelector('p');
 paragraph.parentElement;            // parent of p
@@ -81,16 +82,24 @@ const newB = document.createElement('b');
 newB.append('HELLO!!');
 p.prepend(newB);
 
-//SIBLING
+
+//SIBLING (insertAdjacentElement)
 const siblingH1 = document.createElement('h1');
 siblingH1.append('THIS IS THE SIBLING H1');
 h1.insertAdjacentElement('beforebegin', siblingH1);         // beforebegin, afterbegin, beforeend, afterend
 
 
+//REMOVE CHILD & REMOVE
+const firstLi = document.querySelector('li');
+const firstUl = document.querySelector('ul');
+firstUl.removeChild(firstLi);                               // doesn't work on IE
+//or firstLi.parentElement.removeChild(firstLi);            // much more browser friendly
 
-
-
-
+    //or
+    
+const imageRemove = document.querySelector('img');
+imageRemove.remove();
+// or img.parentElement.removeChild(img);
 
 
 
