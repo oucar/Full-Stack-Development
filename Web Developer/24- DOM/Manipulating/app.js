@@ -90,3 +90,19 @@ h1.insertAdjacentElement('beforebegin', siblingH1);         // beforebegin, afte
 
 
 
+
+
+
+
+
+
+
+//CREATING 100 BUTTONS EXAMPLE
+const container = document.querySelector('#container');
+
+for(let i = 0; i<100; i++){
+    const button = document.createElement('button');
+    button.textContent = "asdfasdf";
+    container.appendChild(button);
+}
+
