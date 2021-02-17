@@ -61,5 +61,24 @@ const newMovies = movies.map(movie => (
 const add2 = (a,b) => a+b; 
 
 
+// event listener and arrow p1
+btn.addEventListener('click', function(){
+    alert('hey!');
+});
 
 
+// WITH EVENT LISTENERS
+const hello = () => {
+    console.log('hello');
+}
+
+const goodbye = () => {
+    console.log('goodbye');
+}
+
+
+const btn1 = document.querySelector('#hello');
+btn1.addEventListener('click', hello);
+
+const btn2 = document.querySelector('#goodbye');
+btn2.addEventListener('click', goodbye);
