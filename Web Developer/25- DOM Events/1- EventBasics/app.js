@@ -29,7 +29,7 @@ btn3.addEventListener('click', function () {    // event that is being listened,
 })
 
 const btn4 = document.querySelector("#v4");
-btn4.addEventListener('click', () => {
+btn4.addEventListener('click', () => {          // you're not calling this function. it will be called once the user clicked on the button
     console.log("4TH ONE IS CLICKED!")
 });
 
@@ -53,4 +53,23 @@ tasButton.addEventListener('click', twist)
 tasButton.addEventListener('click', shout)
 
 
+// adding event listener without a defined function
+btn.addEventListener('click', function(){
+    alert('hey!');
+});
 
+// EVENT LISTENERS AND ARROW FUNCTIONS
+const hello = () => {
+    console.log('hello');
+}
+
+const goodbye = () => {
+    console.log('goodbye');
+}
+
+
+const btn1 = document.querySelector('#hello');
+btn1.addEventListener('click', hello);
+
+const btn2 = document.querySelector('#goodbye');
+btn2.addEventListener('click', goodbye);
