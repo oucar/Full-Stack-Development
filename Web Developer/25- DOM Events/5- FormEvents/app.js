@@ -1,4 +1,4 @@
-
+// ! Important!
 
 const tweetForm = document.querySelector('#tweetForm');
 const tweetsContainer = document.querySelector('#tweets');
