@@ -53,12 +53,13 @@ tasButton.addEventListener('click', twist)
 tasButton.addEventListener('click', shout)
 
 
+
 // adding event listener without a defined function
 btn.addEventListener('click', function(){
     alert('hey!');
 });
 
-// EVENT LISTENERS AND ARROW FUNCTIONS
+// ! EVENT LISTENERS AND ARROW FUNCTIONS
 const hello = () => {
     console.log('hello');
 }
