@@ -10,11 +10,11 @@ const randomizeColor = () => {
     const g = Math.floor( Math.random() * 255 );
     const b = Math.floor( Math.random() * 255 );
 
-    let pixels = [r,g,b];
+    let pixels = [r,g,b];                           // will help to output text
 
     let i = 0;
-    for(span of spans){
-        span.textContent = pixels[i];
+    for(span of spans){                             // each span represents a text
+        span.textContent = pixels[i];               // we have 3 spans in total in the html
         i++;
     } // end for
 
