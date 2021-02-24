@@ -1,10 +1,11 @@
-const button = document.querySelector('#changeColor');
-const container = document.querySelector('#container');
+const button = document.querySelector('#changeColor');              // button
+const container = document.querySelector('#container');             // container which contains the button
 
 button.addEventListener('click', function (e) {
     container.style.backgroundColor = makeRandColor();
     e.stopPropagation();
 })
+
 container.addEventListener('click', function () {
     container.classList.toggle('hide');
 })
