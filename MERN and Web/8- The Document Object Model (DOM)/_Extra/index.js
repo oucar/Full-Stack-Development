@@ -1,9 +1,11 @@
 // Event Bubbling -- Deleting
+// ! e.target --> the element that is clicked!
 const list = document.querySelector("#book-list ul");
+
 list.addEventListener('click', function(e) {
-  if (e.target.className == 'delete') {
-    const li = e.target.parentElement;
-    li.parentNode.removeChild(li); // or simply list.removeChild(li);
+  if (e.target.className == 'delete') {           // if the button is clicked
+    const li = e.target.parentElement;            // parent of the clickked element
+    li.parentNode.removeChild(li);                // or simply list.removeChild(li);
   };
 });
 

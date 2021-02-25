@@ -1,4 +1,3 @@
-
 //Created by the browser when a web page is loaded.
 
 var titles = document.getElementsByClassName("title");
@@ -62,7 +61,7 @@ console.log("book-list previous ELEMENT sibling is: ", bookListSib.previousEleme
 
 bookListSib.previousElementSibling.querySelector("p").innerHTML += '<br/> Haha! '; // searches inside the header
 
-------EVENTS ------
+//------EVENTS ------
 var h2 = document.querySelector("#book-list h2");
 
 h2.addEventListener("click", function(e){ // you can call the parameter whatever you want, it represents the event itself
