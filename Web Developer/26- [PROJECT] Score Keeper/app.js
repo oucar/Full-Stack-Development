@@ -1,61 +1,66 @@
 // Using Bulma
 
-const p1Button = document.querySelector("#p1Button");
-const p2Button = document.querySelector("#p2Button");
-const p1Display = document.querySelector("#p1Display");
-const p2Display = document.querySelector("#p2Display");
-const resetButton = document.querySelector("#reset");
-const winningScoreSelect = document.querySelector("#playto");
-
-
-let p1Score = 0;
-let p2Score = 0;
 let winningScore = 5;
 let isGameOver = false;
 
-// increment p1
-p1Button.addEventListener('click', function(){
+const resetButton = document.querySelector("#reset");
+const winningScoreSelect = document.querySelector("#playto");
+
+// OBJECTS
+const p1 = {
+    score:      0,
+    button:     document.querySelector("#p1Button"),
+    display:    document.querySelector("#p1Display"),
+}
+
+const p2 = {
+    score:      0,
+    button:     document.querySelector("#p2Button"),
+    display:    document.querySelector("#p2Display"),
+}
+
+//! ---- UPDATE SCORES ----
+const updateScore = function(player, opponent){
 
     if(!isGameOver){
-        p1Score ++;
-        if(p1Score === winningScore){
+        player.score ++;
+        if(player.score === winningScore){
             isGameOver = true;
-            p1Display.classList.add('winner');              // ! add the class
-            p2Display.classList.add('loser');
-        }
-        p1Display.textContent = p1Score;
-    }
+            player.display.classList.add('has-text-success');              // ! add the class
+            opponent.display.classList.add('has-text-danger');
+            player.button.disabled = true;
+            opponent.button.disabled = true;
+        } // end if 
+        player.display.textContent = player.score;
+    } // end outer if
+} // end updateScore()
+
+// EVENT LISTENERS FOR UPDATING THE SCORES
+p1.button.addEventListener('click', function(){
+    updateScore(p1, p2);
 })
 
-// increment p2
-p2Button.addEventListener('click', function(){
-
-    if(!isGameOver){
-        p2Score ++;
-        if(p2Score === winningScore){
-            isGameOver = true;
-            p1Display.classList.add('loser');              // ! add the class
-            p2Display.classList.add('winner');
-        }
-        p2Display.textContent = p2Score;
-    }
+p2.button.addEventListener('click', function(){
+    updateScore(p2, p1);
 })
 
-// reset button
+
+// ! RESET BUTTON
 const reset = function(){
     isGameOver = false;
-    p1Score = p2Score = 0;
-    p1Display.textContent = p2Display.textContent = 0;
-    p1Display.classList.remove('winner', 'loser');      // ! remove the one you've found
-    p2Display.classList.remove('winner', 'loser');
+    p1.score = p2.score = 0;
+    p1.display.textContent = p2.display.textContent = 0;
+    p1.display.classList.remove('winner', 'loser');      // ? remove the one you've found
+    p2.display.classList.remove('winner', 'loser');
+    p1.button.disabled = p2.button.disabled = false;
 }
 
 resetButton.addEventListener('click', reset);
 
 
-// select the winning score
+// ! WINNING SCORE
 winningScoreSelect.addEventListener('change', function(){
-    //alert(this.value); // ! get the value of the thing you selected
+    //alert(this.value);                                // ? get the value of the thing you selected
     winningScore = parseInt(this.value);
     reset();
 })
