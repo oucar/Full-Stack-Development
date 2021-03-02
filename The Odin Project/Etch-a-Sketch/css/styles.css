@@ -54,15 +54,18 @@ html, body{
 }
 
 body{
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items:center;
     text-align: center;
 }
 
 button{
-    
+}
+
+.size{
 
 }
 
@@ -70,12 +73,25 @@ button{
     display:flex;
     flex-flow: row wrap;
     justify-content: center;
-    width: 680px;                                          /*TODO: Apply another css rule for mobile responsiveness (360px)*/
+    width: 600px;                                          /*TODO: Apply another css rule for mobile responsiveness (360px)*/
 }
 
 .square{
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     border: 1px solid black;
+    box-sizing: border-box;
+}
 
+.squareSmall{                   
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+    box-sizing: border-box;
+}
+
+.squareXSmall{
+    border: 1px solid black;
+    height: 10px;
+    width: 10px;
 }
