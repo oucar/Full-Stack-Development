@@ -3,7 +3,7 @@
 
 const container = document.querySelector(".container"); // select .container
 
-let squareCount = 16; 
+let squareCount = 20; 
 let totalSquare = squareCount * squareCount;
 let color = `rgb(255,20,147)`;
 let isSelected = false;
@@ -64,6 +64,7 @@ for (let square of squares) {
 const clearBtn = document.querySelector(".clearBtn"); // select the clear button
 
 const clear = function () {
+    const squares = document.querySelectorAll('.square')
   for (let square of squares) {
     square.setAttribute("style", "backgroundColor: white;");
   }
@@ -73,22 +74,20 @@ clearBtn.addEventListener("click", clear); // add eventListener to clearBtn
 
 // ===============         SIZING         ===============
 const selectBtn = document.querySelector("#selectSize"); // select the select button
-const squaresResize = document.querySelectorAll("section div"); // select the squares will be resized
 
 const initialize = function(sizeGiven, count){
-    const initializedSqures = squaresResize;
+    const initializedSqures = document.querySelectorAll(`.square`)
     for (each of initializedSqures){
         each.remove();
     }
 
     for (let i = 0; i < count; i++) {
         const square = document.createElement("div");
-        square.classList.add(`${sizeGiven}`);
+        square.classList.add(`square`, `${sizeGiven}`);
         container.appendChild(square);
-      }
-
-}
-
+        square.addEventListener("mouseenter", colorize);
+    }
+} // end initialize()
 
 selectBtn.addEventListener("click", function (e) {
   const inputs = document.querySelectorAll('input[name="choice"]');
@@ -99,13 +98,13 @@ selectBtn.addEventListener("click", function (e) {
       
         switch (selectedValue) {
             case `square`:
-                initialize(selectedValue, 100);
+                initialize(selectedValue, 400);
                 break;
             case `squareSmall`:
-                initialize(selectedValue, 600);
+                initialize(selectedValue, 900);
                 break;
             case `squareXSmall`:
-                initialize(selectedValue, 3000);
+                initialize(selectedValue, 3600);
                  break;
         
             default:
