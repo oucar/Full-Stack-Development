@@ -54,7 +54,6 @@ html, body{
 }
 
 body{
-    padding-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -62,18 +61,21 @@ body{
     text-align: center;
 }
 
-button{
+.size{
+    padding: 20px 0 10px;
+    display: flex;
 }
 
-.size{
-
+.colors{
+    padding: 10px 10px;
 }
 
 .container{
     display:flex;
     flex-flow: row wrap;
     justify-content: center;
-    width: 600px;                                          /*TODO: Apply another css rule for mobile responsiveness (360px)*/
+    width: 600px;
+    margin-top: 20px;
 }
 
 .square{
@@ -84,7 +86,7 @@ button{
 }
 
 .squareSmall{                   
-    border: 1px solid black;
+    border: 0px solid black;
     height: 20px;
     width: 20px;
     box-sizing: border-box;
