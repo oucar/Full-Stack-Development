@@ -64,8 +64,10 @@ body {
 #display{
     width: 180px;
     padding: 10px;
+    font-size: 28px;
     box-sizing: border-box;
     border-radius: 0 10px 0 0;
+    overflow: hidden;
 
     color:white;
     background-color: #108378;
