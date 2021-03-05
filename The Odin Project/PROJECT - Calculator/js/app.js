@@ -5,6 +5,7 @@ let numbers = []; //array of strings
 let operations = []; //array of strings
 let currentNumber = "0";
 let operationMode = false;
+let totalHistory = "0";
 
 const buttonsNodeList = document.querySelectorAll(".btn");
 const buttons = [...buttonsNodeList];
@@ -19,7 +20,6 @@ const numberPress = function (num) {
   updateDisplay(currentNumber);
   operationMode = true;
 };
-
 
 const operatorPress = function (op) {
   if (!operationMode) {
@@ -53,17 +53,18 @@ const calculate = function () {
     if (i === 0) {
       total = parseFloat(numbers[i]);
     } else {
-      total = operate(total, numbers[i], operations[i-1]);  // check the pattern above the function
+      total = operate(total, numbers[i], operations[i - 1]); // check the pattern above the function
     }
+    totalHistory = total;
   }
+  history();
   return `${total}`;
 };
 
 // helper function for calculate()
 const operate = function (val1, val2, op) {
-
-    val1 = parseFloat(val1);
-    val2 = parseFloat(val2);
+  val1 = parseFloat(val1);
+  val2 = parseFloat(val2);
 
   switch (op) {
     case "add":
@@ -111,7 +112,7 @@ const updateDisplay = function (num = "0") {
 
 const handleButtonPress = function (btnId) {
   if (btnId === "dot") {
-    currentNumber = currentNumber + '.';
+    currentNumber = currentNumber + ".";
     updateDisplay(currentNumber);
   } else if (btnId === "clear") {
     console.log(`${btnId} pressed.`);
@@ -124,6 +125,47 @@ const handleButtonPress = function (btnId) {
   } // end conditionals
 };
 
+// History
+const historyEl = document.querySelector(".history");
+
+const history = function () {
+  //clone operations and change their strings with the actual math symbols.
+  const cloneOperations = [...operations];
+  for (let curr = 0; curr < operations.length; curr++) {
+    switch (operations[curr]) {
+      case "add":
+        cloneOperations[curr] = "+";
+        break;
+      case "subtract":
+        cloneOperations[curr] = "-";
+        break;
+      case "multiply":
+        cloneOperations[curr] = "*";
+        break;
+      case "divide":
+        cloneOperations[curr] = "÷";
+        break;
+      case "equal":
+        cloneOperations[curr] = "=";
+        break;
+      default:
+        console.error("ERROR: Couldn't find the sign you're looking for");
+        break;
+    } // end switch
+  } // end for
+
+  let historyOut = document.createElement("p");
+  historyOut.innerText = `${numbers[0]}`;
+
+  let i = 1;
+  for (; i < numbers.length; i++)
+    historyOut.innerText += ` ${cloneOperations[i - 1]} ${numbers[i]} `;
+    
+  historyOut.innerText += ` ${cloneOperations[i - 1]} ${totalHistory} `; // = result
+  historyEl.appendChild(historyOut);
+};
+
+// Add event listeners to the buttons
 buttons.forEach((btn) => {
   btn.addEventListener("click", () => handleButtonPress(btn.id));
 });
