@@ -10,21 +10,6 @@ const fakeRequestCallback = (url, success, failure) => {
     }, delay)
 }
 
-
-// THE PROMISE VERSION 
-const fakeRequestPromise = (url) => {   // only url is passed here
-    return new Promise((resolve, reject) => {
-        const delay = Math.floor(Math.random() * (4500)) + 500;
-        setTimeout(() => {
-            if (delay > 4000) {
-                reject('Connection Timeout :(')
-            } else {
-                resolve(`Here is your fake data from ${url}`)
-            }
-        }, delay)
-    })
-}
-
 // const haha = fakeRequestPromise('facebook.com/api);
 
 // fakeRequestCallback('books.com/page1',
@@ -77,8 +62,24 @@ const fakeRequestPromise = (url) => {   // only url is passed here
 //     })
 
 
-// THE CLEANEST OPTION WITH THEN/CATCH
-// RETURN A PROMISE FROM .THEN() CALLBACK SO WE CAN CHAIN!
+// THE PROMISE VERSION 
+const fakeRequestPromise = (url) => {   // only url is passed here
+    return new Promise((resolve, reject) => {
+        const delay = Math.floor(Math.random() * (4500)) + 500;
+        setTimeout(() => {
+            if (delay > 4000) {
+                reject('Connection Timeout :(')
+            } else {
+                resolve(`Here is your fake data from ${url}`)
+            }
+        }, delay)
+    })
+}
+
+
+// ! THE CLEANEST OPTION WITH THEN/CATCH
+// ? RETURN A PROMISE FROM .THEN() CALLBACK SO WE CAN CHAIN!
+// ! way better than chaining!
 fakeRequestPromise('yelp.com/api/coffee/page1')
     .then((data) => {
         console.log("IT WORKED!!!!!! (page1)")
@@ -94,7 +95,7 @@ fakeRequestPromise('yelp.com/api/coffee/page1')
         console.log("IT WORKED!!!!!! (page3)")
         console.log(data)
     })
-    .catch((err) => {
+    .catch((err) => { // if one of the others fail...
         console.log("OH NO, A REQUEST FAILED!!!")
         console.log(err)
     })
