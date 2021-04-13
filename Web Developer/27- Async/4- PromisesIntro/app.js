@@ -1,4 +1,4 @@
-// THE CALLBACK VERSION
+// THE CALLBACK (KINDA HELL) VERSION
 const fakeRequestCallback = (url, success, failure) => {
     const delay = Math.floor(Math.random() * 4500) + 500;
     setTimeout(() => {
@@ -9,8 +9,10 @@ const fakeRequestCallback = (url, success, failure) => {
         }
     }, delay)
 }
+
+
 // THE PROMISE VERSION 
-const fakeRequestPromise = (url) => {
+const fakeRequestPromise = (url) => {   // only url is passed here
     return new Promise((resolve, reject) => {
         const delay = Math.floor(Math.random() * (4500)) + 500;
         setTimeout(() => {
@@ -23,6 +25,7 @@ const fakeRequestPromise = (url) => {
     })
 }
 
+// const haha = fakeRequestPromise('facebook.com/api);
 
 // fakeRequestCallback('books.com/page1',
 //     function (response) {
@@ -47,9 +50,6 @@ const fakeRequestPromise = (url) => {
 //     }, function (err) {
 //         console.log("ERROR!!!", err)
 //     })
-
-
-
 
 
 

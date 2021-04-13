@@ -37,6 +37,8 @@ delayedColorChange("red", 1000, () => {
   });
 });
 
+// !! Promises are going to be the hero!
+
 // searchMoviesAPI('amadeus', () => {
 //     saveToMyDB(movies, () => {
 //         //if it works, run this:
