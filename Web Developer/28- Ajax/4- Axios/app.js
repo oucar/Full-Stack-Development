@@ -28,6 +28,8 @@ const fetchBitcoinPrice = async () => {
     }
 }
 
+// Axios is built on top of fetch!
+
 const jokes = document.querySelector('#jokes');
 const button = document.querySelector('button');
 

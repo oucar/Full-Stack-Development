@@ -1,4 +1,5 @@
 // NOT AT ALL IMPORTANT TO REMEMBER ANY OF THIS CODE!
+// ! OUTDATED!
 const req = new XMLHttpRequest();
 
 req.onload = function () {
