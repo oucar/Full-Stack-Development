@@ -1,4 +1,4 @@
-// ! sync functions return a promise by default!
+// ! async functions return a promise by default!
 
 // async function hello() {
 // }
