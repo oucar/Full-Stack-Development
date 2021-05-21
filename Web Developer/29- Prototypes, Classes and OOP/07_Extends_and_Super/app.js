@@ -1,7 +1,7 @@
 // Sharing functionality between classes
 
 class Pet {
-	constructor(name, age) {
+	constructor(name, age) {					// will be used for children as well
 		console.log('IN PET CONSTRUCTOR!');
 		this.name = name;
 		this.age = age;
@@ -12,9 +12,11 @@ class Pet {
 }
 
 class Cat extends Pet {
-	constructor(name, age, livesLeft = 9) {
+	constructor(name, age, livesLeft = 9) {		// custom constructor
 		console.log('IN CAT CONSTRUCTOR!');
-		super(name, age); 						//
+
+		// ! super is a reference to what we are extending from
+		super(name, age); 						// this.name = name; this.age = age; --> does the same thing
 		this.livesLeft = livesLeft;
 	}
 	meow() {
