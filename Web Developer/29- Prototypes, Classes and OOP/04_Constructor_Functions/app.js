@@ -1,4 +1,4 @@
-// This is a Constructor Function...
+// This is a Constructor Function... 
 function Color(r, g, b) {
 	this.r = r;
 	this.g = g;
@@ -37,3 +37,6 @@ const color1 = new Color(40, 255, 60);
 color1.hex();
 const color2 = new Color(0, 0, 0);
 color2.hex();
+
+
+// Color.prototype gives you the functions and others
