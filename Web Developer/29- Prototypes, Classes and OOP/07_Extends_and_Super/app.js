@@ -1,3 +1,5 @@
+// Sharing functionality between classes
+
 class Pet {
 	constructor(name, age) {
 		console.log('IN PET CONSTRUCTOR!');
@@ -12,7 +14,7 @@ class Pet {
 class Cat extends Pet {
 	constructor(name, age, livesLeft = 9) {
 		console.log('IN CAT CONSTRUCTOR!');
-		super(name, age);
+		super(name, age); 						//
 		this.livesLeft = livesLeft;
 	}
 	meow() {
@@ -25,6 +27,11 @@ class Dog extends Pet {
 		return 'WOOOF!!';
 	}
 	eat() {
-		return `${this.name} scarfs his food!`;
+		return `${this.name} scarfs his food!`;	// overrides
 	}
 }
+
+
+// const pet = new Dog("Onur", 12);
+// pet.bark() --> "WOOF!!"
+// pet.eat()

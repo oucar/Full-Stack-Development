@@ -33,10 +33,11 @@ Color.prototype.rgba = function(a = 1.0) {
 	return `rgba(${r}, ${g}, ${b}, ${a})`;
 };
 
-const color1 = new Color(40, 255, 60);
+const color1 = new Color(40, 255, 60); 			// "this" we used in line 3 refers to this object
 color1.hex();
 const color2 = new Color(0, 0, 0);
 color2.hex();
 
 
 // Color.prototype gives you the functions and others
+// color1.hex === color2.hex (true, they are defined in _proto_)
