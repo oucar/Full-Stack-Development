@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+</head>
+<body>
+    <h1>Random Number</h1>
+    <p>Check index.js for further information</p> 
+
+    <!-- WRITE THE JAVASCRIPT FIRST THEN ADD YOUR HTML MARKUP INSIDE! -->
+    
+    <%= ` Your random number is: ${num}` %> 
+    <% if (num % 2 === 0 ) { %>
+        <h2> <%= num %>  is an EVEN number! </h2>
+    <% } else {  %> 
+        <h2> <%= num %>  is an ODD number! </h2>
+    <% } %> 
+
+    <%= num%2===0 ? 'EVEN' : 'ODD' %> 
+
+</body>
+</html>
