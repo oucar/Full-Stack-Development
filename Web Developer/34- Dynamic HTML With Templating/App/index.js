@@ -27,6 +27,12 @@ app.get('/rand', (req,res) => {
     res.render('random.ejs', { num }); // num will be passed as num
 });
 
+// Cats
+app.get('/cats', (req, res) => {
+    const cats = ['Onur', 'Ucar', 'Andy', 'Harris', 'Hehe', 'Cat', 'Lorem', 'Ipsum'];
+    res.render('cats.ejs', { allCats: cats });
+})
+
 // Subreddit Sample Templating
 app.get('/r/:subreddit/:num', (req,res) => {
     // ! take these from req.params
