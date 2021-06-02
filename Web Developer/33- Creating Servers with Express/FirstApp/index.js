@@ -58,8 +58,26 @@ app.get('/r/:subreddit/:postId', (req, res) => {
     res.send(`This is the post "${id}" from the "${subredditName}" subreddit!`);
 })
 
+// Query Strings
+// try this in postman
+// http://localhost:3000/search?&q=deneme&name=onur
+app.get('/search', (req, res) => {
+    const { q } = req.query;
+
+    if(!q) { 
+        res.send('NOTHING FOUND IF NOTHING SEARCHED! :)');
+    } else {
+        console.log(q);
+        res.send(`${q.q} and ${q.name}`);
+    }
+
+})
 
 // anything else
 app.get('*', (req, res) => {
     res.send(`I don't know this path...`);
 })
+
+
+
+// ! nodemon index.js to activate nodemon
