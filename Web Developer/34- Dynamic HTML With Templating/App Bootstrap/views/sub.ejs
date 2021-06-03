@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= subreddit %> </title>
+
+    <!-- STATIC FILE -->
+    <!-- ! ONLY THE CONTENT OF THE PUBLIC DIRECTORY WILL BE SERVED!  -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+    <%= num %>
+    <h2> Browsing the <%= name %> subreddit </h2>
+    <h3> Subscribers: <%= subscribers %> </h3>
+    <h3> Description: <%= description %> </h3>
+
+    <!-- for each post  -->
+    <% for( let post of posts ) { %>
+        <article>
+            <p> <%= post.title %> - by <%= post.author %>  </p>
+            <!-- if there is an img -->
+            <% if(post.img){ %> 
+                <img src="<%= post.img %> " alt="" srcset="">
+            <% } else { %> 
+                <p> <strong>No image!</strong> </p>
+            <% } %> 
+        </article>
+    <% } %>
+
+    
+</body>
+
+</html>
