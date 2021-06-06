@@ -1,0 +1,15 @@
+{
+  "name": "35--rest",
+  "version": "1.0.0",
+  "description": "* Get Request: Retrieve/get information. Included in the query string. Bookmarkable, limited amount of data can be sent * Post Request: Post data to the server, WRITE, CREATE, UPDATE. Data is sent via request body, not query string! JSON!     * You can send body (check Postman) with post requests.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
