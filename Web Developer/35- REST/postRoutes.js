@@ -6,7 +6,7 @@ const app = express();
 // app.use will run in every single request.
 // helps us to use req.body as we want
 app.use(express.urlencoded( {extended: true} ));
-
+// or app.use(express.json());
 //  TEST THEM USING POSTMAN OR HTML FORMS 
 // ? x-www-form-urlencoded type,meat - qty,2
 // ! GET REQUEST
