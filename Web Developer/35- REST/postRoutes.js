@@ -1,7 +1,7 @@
 // ! Defining Express POST Routes
 const express = require('express');
 const app = express();
-
+const path = require ('path');
 
 // app.use will run in every single request.
 // helps us to use req.body as we want
@@ -9,6 +9,9 @@ app.use(express.urlencoded( {extended: true} ));
 // or app.use(express.json());
 //  TEST THEM USING POSTMAN OR HTML FORMS 
 // ? x-www-form-urlencoded type,meat - qty,2
+
+
+// EXTRA EXAMPLES 
 // ! GET REQUEST
 app.get('/tacos', (req, res) => {
     res.send("GET /tacos response");
