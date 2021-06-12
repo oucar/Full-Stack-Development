@@ -21,10 +21,14 @@
         <h1>Comments</h1>
         <ul>
              <% for( let c of comments ) { %>
-                <li> <%= c.comment %> - by <b>@<%= c.username %></b></li>
+                <li> 
+                    <%= c.comment %> - by <b>@<%= c.username %></b>
+                    <a href="/comments/<%= c.id %> ">details</a>
+                </li>
              <% } %> 
         </ul>
         
+        <a href="/comments/new">Create a new comment</a>
     </body>
     </html>
 
