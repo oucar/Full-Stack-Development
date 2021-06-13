@@ -54,8 +54,19 @@ app.get('/comments/:id', (req, res) => {
     const { id } = req.params;
     const comment = comments.find( c => c.id === id );
     res.render('comments/show.ejs', {comment});
-
 })
+
+// ! UPDATE (update the comment)
+// ? PATCH REQUEST 
+app.patch('/comments/:id', (req, res) => {
+    // take the id and comment
+    const { id } = req.params;
+    const foundComment = comments.push({ username, comment, id: uuid() });
+    foundComment.comment = newCommentText;
+    res.redirect('/comments');
+})
+
+
 
 app.listen(3000, () => {
     console.log("ON PORT 3000!");
