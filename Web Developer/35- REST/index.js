@@ -10,14 +10,16 @@ const express = require('express');
 const app = express();
 const path = require ('path');
 const {v4 : uuid } = require('uuid'); // ? universally unique id --> uuid();
+const methodOverride = require('method-override')
 app.set('views', path.join(__dirname, '/views'));
 app.use(express.urlencoded( {extended: true} ));
 app.use(express.json());
+app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 
 
 // ! fake  comments for now (array of objects)
-const comments = [
+let comments = [
     {
         id: uuid(),
         username : 'Todd',
@@ -56,13 +58,30 @@ app.get('/comments/:id', (req, res) => {
     res.render('comments/show.ejs', {comment});
 })
 
+
+// ! FORM FOR THE UPDATE
+app.get('/comments/:id/edit', (req,res) => {
+    const { id } = req.params;
+    const comment = comments.find( c => c.id === id );
+    res.render('comments/edit.ejs', { comment }); // we can pre-populate the form
+
+})
+
+
 // ! UPDATE (update the comment)
-// ? PATCH REQUEST 
+// ? send a PATCH REQUEST 
 app.patch('/comments/:id', (req, res) => {
     // take the id and comment
     const { id } = req.params;
     const foundComment = comments.push({ username, comment, id: uuid() });
     foundComment.comment = newCommentText;
+    res.redirect('/comments');
+})
+
+// ! DELETE
+app.delete('/comments/:id', (req, res) => {
+    const { id } = req.params;
+    comments = comments.filter( c => c.id !== id); //returns a new array
     res.redirect('/comments');
 })
 
@@ -73,3 +92,13 @@ app.listen(3000, () => {
 })
 
 
+
+// REMOVING AN ITEM IN ECMASCRIPT6
+// let value = 3
+
+// let arr = [1, 2, 3, 4, 5, 3]
+
+// arr = arr.filter(item => item !== value)
+
+// console.log(arr)
+// // [ 1, 2, 4, 5 ]
