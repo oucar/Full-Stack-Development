@@ -1,0 +1,15 @@
+{
+  "name": "37--mongo-with-mongoose",
+  "version": "1.0.0",
+  "description": "* What is Mongoose:      * Mongoose is an ODM: Object Data Mapper     * ODMs like Mongoose map documents coming from a database into usable JS objects     * ODMs makes thing easier, doesn't add any functionality. * use drivers to connect mongo to a programming language",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.12.15"
+  }
+}
