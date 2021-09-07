@@ -30,3 +30,15 @@ if (password.length >= 6){
 
 
 // !null --> true
+// ternary:
+
+let accessAllowed = (age > 18) ? true : false;
+
+// ! NULLISH COALESCING OPEARTOR - '??'
+// The result of a??b is
+// if a is defined, then a,
+// if a isn’t defined, then b.
+
+// same as below: 
+// result = (a !== null && a !== undefined) ? a : b;
+// ! || returns the first truthy value, ?? returns the first defined value.
