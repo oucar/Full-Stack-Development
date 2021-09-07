@@ -68,6 +68,12 @@ btn.addEventListener('click', function(){
 
 
 // WITH EVENT LISTENERS
+const btn1 = document.querySelector('#hello');
+btn1.addEventListener('click', hello);
+
+const btn2 = document.querySelector('#goodbye');
+btn2.addEventListener('click', goodbye);
+
 const hello = () => {
     console.log('hello');
 }
@@ -76,9 +82,11 @@ const goodbye = () => {
     console.log('goodbye');
 }
 
+// another example with tenary
+let age = prompt("What is your age?", 18);
 
-const btn1 = document.querySelector('#hello');
-btn1.addEventListener('click', hello);
+let welcome = (age < 18) ?
+  () => alert('Hello') :
+  () => alert("Greetings!");
 
-const btn2 = document.querySelector('#goodbye');
-btn2.addEventListener('click', goodbye);
+welcome();
