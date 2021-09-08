@@ -93,10 +93,7 @@ let numsCopy = nums;
 nums.push(4);       // numCopy, nums = [1,2,3,4]
 
 // YOU CAN USE CONST WITH ARRAY, BUT CANNOT USE CONST WITH STRINGS!
-
-
 pets.reverse();                    // array has been reversed
-
 
 // Converting an array to string 
 let fruits = ["Banana", "Orange", "Apple", "Mango"];			// Using toString()
@@ -105,11 +102,83 @@ let fruitsString = fruits.toString();
 let fruitsJoin = fruits.join(" * ");	 				//You can choose the seperator using join();
 
 
+// ! SPLICE - deletes! (delete deletes as well but doesn't change the array length)
+let arr = ["I", "study", "JavaScript"];
+arr.splice(1, 1); // from index 1 remove 1 element
+alert( arr ); // ["I", "JavaScript"]
+
+let arr = ["I", "study", "JavaScript", "right", "now"];
+// ! remove 3 first elements and replace them with another
+arr.splice(0, 3, "Let's", "dance");
+alert( arr ) // now ["Let's", "dance", "right", "now"]
 
 
+// ! SLICE
+let arr = ["t", "e", "s", "t"];
+alert( arr.slice(1, 3) ); // e,s (copy from 1 to 3)
 
 
+// ! CONCAT
+let arr = [1, 2];
+// create an array from: arr and [3,4]
+alert( arr.concat([3, 4]) ); // 1,2,3,4
+// create an array from: arr and [3,4] and [5,6]
+alert( arr.concat([3, 4], [5, 6]) ); // 1,2,3,4,5,6 
+// create an array from: arr and [3,4], then add values 5 and 6
+alert( arr.concat([3, 4], 5, 6) ); // 1,2,3,4,5,6
 
 
+//! forEach
+["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
+    alert(`${item} is at index ${index} in ${array}`);
+});
 
 
+// ! FIND
+let users = [
+    {id: 1, name: "John"},
+    {id: 2, name: "Pete"},
+    {id: 3, name: "Mary"}
+  ];
+  
+  let user = users.find(item => item.id == 1);
+  
+  alert(user.name); // John
+
+
+// ! FILTER
+let users = [
+    {id: 1, name: "John"},
+    {id: 2, name: "Pete"},
+    {id: 3, name: "Mary"}
+  ];
+  
+  // returns array of the first two users
+  let someUsers = users.filter(item => item.id < 3);
+  
+  alert(someUsers.length); // 2
+
+// ! MAP MAP MAP! - It calls the function for each element of the array and returns the array of results.
+let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length);
+alert(lengths); // 5,7,6
+
+// ! SPLIT
+let names = 'Bilbo, Gandalf, Nazgul';
+let arr = names.split(', ');
+for (let name of arr) {
+  alert( `A message to ${name}.` ); // A message to Bilbo  (and other names)
+}
+
+
+// ! ARRAY DESTRUCTURING!
+// we have an array with the name and surname
+let arr = ["John", "Smith"]
+// destructuring assignment
+// sets firstName = arr[0]
+// and surname = arr[1]
+let [firstName, surname] = arr;
+alert(firstName); // John
+alert(surname);  // Smith
+
+// ! OR
+let [firstName, surname] = "John Smith".split(' ');
