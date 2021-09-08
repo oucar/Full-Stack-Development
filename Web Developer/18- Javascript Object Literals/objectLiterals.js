@@ -95,6 +95,60 @@ const student = {
     } 
 }
 
+// delete student.firstName; // -> removes the firstName attribute FROM THE OBJECT!Í
 
 student.exams["final"];         // 100
 student.exams.final;            // 100
+
+
+
+let user = {
+  name: "John",
+  age: 30
+};
+
+let key = prompt("What do you want to know about the user?", "name");
+
+// access by variable
+alert( user[key] ); // John (if enter "name")
+// alert(user.key); // would give your error.
+
+
+// OBJECT MAKER
+function makeUser(name, age){
+    return{
+        name: name, // or name,
+        age: age,   // age,
+    };
+}
+
+let newUser = makeUser("Onur", 30);
+console.log(newUser.age);
+
+
+// object references and copying
+let user1 = { name: 'John' };
+let user2 = user1;
+user2.name = 'Pete'; // changed by the "admin" reference
+alert(user1.name); // 'Pete', changes are seen from the "user" reference
+
+// comparison by reference
+let a = {};
+let b = a; // copy the reference
+
+alert( a == b ); // true, both variables reference the SAME OBJECT
+alert( a === b ); // true
+
+// how to clone an object
+let user = {
+    name: "John",
+    age: 30
+};
+  
+let clone = {}; // the new empty object
+  
+// let's copy all user properties into it
+for (let key in user) {
+    clone[key] = user[key];
+}
+  
