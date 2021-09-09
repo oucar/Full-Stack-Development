@@ -1,4 +1,14 @@
 // we can group everything together! no need to use prototype
+// Usually, static methods are used to implement functions that belong to the class, but not to any particular object of it.
+// Protected properties are usually prefixed with an underscore _.
+class User { }
+
+User.staticMethod = function() {
+  alert(this === User);
+};
+
+User.staticMethod(); // true
+
 
 class Color {
 	// ! Constructor (automatically runs as long as its name is constructor)
