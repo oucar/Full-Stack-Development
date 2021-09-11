@@ -14,7 +14,9 @@ mongoose.connect('mongodb://localhost:27017/movieApp', {useNewUrlParser: true, u
         console.log(`ERROR: ${err}`);
     });
 
+
 // ? https://mongoosejs.com/docs/guide.html
+// what a movie should look like, it's similar to classes in oop
 const movieSchema = new mongoose.Schema({
     title:      String,
     year:       Number,
@@ -22,22 +24,25 @@ const movieSchema = new mongoose.Schema({
     rating:    String
 });
 
+
 // model name is 'Movie' and we are passing movieSchema as the schema!
 // now we have a model class called 'Movie'
 // mongoose will create a collection called 'movies' if you type Movie below
 const Movie = mongoose.model('Movie', movieSchema);
 
 // new instance of Movie (OOP)
-//const amadeus = new Movie({title: 'Amadeus', year: 1986, score: 9.2, rating: 'PG13'});
+// const amadeus = new Movie({title: 'Amadeus', year: 1986, score: 9.2, rating: 'PG13'});
 // node  --> .load index.js --> amadeus // ! you can now access to amadeus
 // amadeus.save() to save it to the database --> if it's a single instance
 // ! check mongodb --> mongo --> use movieApp --> db.movies.find()
 // ! then you can play with it inside the node repl --> amadeus.score = 9.5
+// ! then amadeus.save() --> check in mongo shell again
 
 
 // ! INSERT MANY --> creates new instances for elements of an array
 // no need to use new Movie({}) ...
 // no need to call .save() --> // ? validations?
+// returns promise
 Movie.insertMany([
     { title: 'ABC', year: 2000, score: 1, rating: 'PG13'},
     { title: 'QWE', year: 2001, score: 2, rating: 'PG13'},
@@ -52,8 +57,8 @@ Movie.insertMany([
 
 // ! FIND
 // query object is a thenable object and // ! NOT CALLBACKS!. but you still can use .then
-
 // find one or many // ! (returns an array)
+// we will use .exec() shortly
 Movie.find({}).then(data => console.log(data));                     // finds an outputs all the data
 Movie.find({ title: 'ABC'}).then(data => console.log(data));        // find where title is ABC
 Movie.find({ year: {$gt: 2002}}).then(data => console.log(data));   // greater than 2002
