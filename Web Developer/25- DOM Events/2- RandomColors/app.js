@@ -22,7 +22,10 @@ const randomizeColor = () => {
 
 }
 
-
-
 // add event listener
 btn.addEventListener('click', randomizeColor);
+
+// const btn4 = document.querySelector("#v4");
+// btn4.addEventListener('click', () => {          // you're not calling this function. it will be called once the user clicked on the button
+//     console.log("4TH ONE IS CLICKED!")
+// });

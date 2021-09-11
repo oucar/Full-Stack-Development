@@ -1,8 +1,6 @@
 // functional parameters 
 function multiply(a,b=1){           // default parameters CANNOT come first!
-
     return a*b;
-
 } 
 
 multiply(7);        // 7*1 = 7

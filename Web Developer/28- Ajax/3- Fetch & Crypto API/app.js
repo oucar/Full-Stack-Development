@@ -13,10 +13,9 @@
 
 
 const fetchBitcoinPrice = async () => {
-
     try {
         const res = await fetch('https://api.cryptoasdnator.com/api/ticker/btc-usd');                 // returns a promise
-        //console.log(res);                                                                        // testing
+        //console.log(res);                                                                           // testing
     
         const data = await res.json();
         console.log(`Current price of bitcoin is: ${data.ticker.price}`)

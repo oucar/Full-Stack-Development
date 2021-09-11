@@ -36,4 +36,4 @@ movies.forEach(function (movie) {
 })
 
 
-// for(movie of movies){console.log(movie.title)}
+// for(movie of movies){console.log(movie.title)} // ! easier to read!ß
