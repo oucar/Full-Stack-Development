@@ -12,7 +12,7 @@ app.listen(port, () => {
 })
 
 
-// ! ther routes
+// ! the routes
 
 // '/' => HOME!
 // /cats => meow
@@ -22,6 +22,7 @@ app.listen(port, () => {
 // this will be rendered at http://localhost:3000/
 app.get('/', (req, res) => {
     res.send('Hello World!'); // respond with text, in html format
+    console.log('/');
     //res.send({color: 'blue'});          // respond with json
 })
 
@@ -45,8 +46,8 @@ app.get('/r/:subreddit', (req, res) => {
 
     console.log(req.params); // ! this is how you would access subreddit name
     const subredditName = req.params.subreddit;
-
     res.send(`This is the "${subredditName}" subreddit!`);
+
 })
 
 

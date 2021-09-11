@@ -1,5 +1,7 @@
 // https://mongoosejs.com/docs/guide.html
 // default port for the mongoose is: 27017
+// Mongoose connects MONGO to JS
+// Mongoose is a ODM
 
 // ! https://mongoosejs.com
 const mongoose = require('mongoose');
