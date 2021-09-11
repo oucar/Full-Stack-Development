@@ -11,8 +11,6 @@ others.join(`, `)                       // "4, 5, 6, 7, 8, 9, 10"     --> string
 
 
 
-
-
 // Destructing OBJECTS (more commonly used)
 const user = {
     email       : `onurucar@gmail.com`,

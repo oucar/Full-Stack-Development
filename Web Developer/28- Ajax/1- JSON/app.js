@@ -3,5 +3,5 @@ const data = `{"ticker":{"base":"BTC","target":"USD","price":"11288.49813464","v
 
 // THIS IS A JS OBJECT
 const parsedData = JSON.parse(data);
-
+// parsedData.ticker.volume; // '91769.69699773'
 
