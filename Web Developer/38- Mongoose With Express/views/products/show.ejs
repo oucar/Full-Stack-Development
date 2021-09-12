@@ -9,9 +9,16 @@
 <body>
     <h1> <%= foundProduct.name %> </h1>
     <ul>
-        <li> <%= foundProduct.price %> </li>
-        <li> <%= foundProduct.category %> </li>
+        <li><%= foundProduct.price %></li>
+        <li><a href="/products?category=<%= foundProduct.category %>"><%= foundProduct.category %></a></li>
     </ul>
+    <a href="/products/<%= foundProduct._id%>/edit ">Edit</a>
+    <br>
     <a href="/products">All products</a>
+
+    <form action="/products/<%=foundProduct._id%>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+
 </body>
 </html>
