@@ -6,7 +6,6 @@ const port = 3000;
 
 const methodOverride = require('method-override');
 
-
 const Product = require('./models/product');
 const mongoose = require('mongoose');
 
