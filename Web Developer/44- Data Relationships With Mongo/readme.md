@@ -1,3 +1,5 @@
+// OS: https://www.tutorialspoint.com/operating_system/index.htm
+
 One to Few (user.js)
 
 {
@@ -11,4 +13,5 @@ One to Few (user.js)
 
 
 
-One to Many (Similar to SQL, you store a reference to another object)
+One to Many (Similar to SQL, you store a reference to another object) -> farm.js
+One to many -> One product has multiple reviews
