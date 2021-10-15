@@ -14,6 +14,7 @@ const userSchema = new mongoose.Schema({
     last: String,
     addresses: [
         {
+            // no id by default
             _id: { id: false },
             street: String,
             city: String,
