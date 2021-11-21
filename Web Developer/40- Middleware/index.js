@@ -35,22 +35,6 @@ app.use('/dogs', (req, res, next) => {
     next();
 })
 
-// ! PRACTICE
-// // runs in every single request, every type.
-// app.use((req, res, next) => {
-//     console.log('My first middleware!');
-//     return next();
-//     console.log('I am after first!, but next() is called first!')
-// })
-
-// // will be called automatically because we have next() above
-// app.use((req, res, next) => {
-//     console.log('Second middleware!');
-//     return next();
-// })
-
-
-
 // next middleware
 app.get('/', (req, res) => {
     console.log(`REQUEST DATE: ${req.requestTime}`)
@@ -63,6 +47,8 @@ app.get('/dogs', (req, res) => {
 
 // ! TWO CALLBACKS! 
 // ! Protecting specific routes!
+// http://localhost:3000/secret/?password=chickennugget
+// http://localhost:3000/secret/?password=123123
 app.get('/secret', verifyPassword, (req, res) => {
     res.send('Secret!');
 })
