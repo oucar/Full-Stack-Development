@@ -10,6 +10,9 @@ mongoose.connect('mongodb://localhost:27017/relationshipDemo', { useNewUrlParser
         console.log(err)
     })
 
+
+// ! ONE TO BAJILLIONS
+// one to many many!
 const userSchema = new Schema({
     username: String,
     age: Number
@@ -35,6 +38,7 @@ const Tweet = mongoose.model('Tweet', tweetSchema);
 // makeTweets();
 
 const findTweet = async () => {
+    // https://mongoosejs.com/docs/populate.html
     const t = await Tweet.find({}).populate('user')
     console.log(t);
 }
