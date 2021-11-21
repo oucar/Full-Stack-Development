@@ -11,6 +11,7 @@ mongoose.connect('mongodb://localhost:27017/relationshipDemo', { useNewUrlParser
     })
 
 
+// one to many
 const productSchema = new Schema({
     name: String,
     price: Number,
@@ -20,9 +21,11 @@ const productSchema = new Schema({
     }
 });
 
+// each farm has some products
 const farmSchema = new Schema({
     name: String,
     city: String,
+    // !! FOREIGN KEY IN SQL!
     products: [{ type: Schema.Types.ObjectId, ref: 'Product' }]
 })
 
@@ -52,6 +55,7 @@ const addProduct = async () => {
 }
 
 
+// turn objectId's into the Product {object} itselff
 Farm.findOne({ name: 'Full Belly Farms' })
     .populate('products')
     .then(farm => console.log(farm))
