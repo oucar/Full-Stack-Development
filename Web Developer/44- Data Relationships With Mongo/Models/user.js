@@ -9,9 +9,13 @@ mongoose.connect('mongodb://localhost:27017/relationshipDemo', { useNewUrlParser
         console.log(err)
     })
 
+
+// ONE TO FEW
+// one user might have a few address
 const userSchema = new mongoose.Schema({
     first: String,
     last: String,
+    // address array (multiple address)
     addresses: [
         {
             // no id by default
