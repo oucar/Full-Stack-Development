@@ -1,11 +1,18 @@
+import { useState } from 'react';
+
 const Home = () => {
+
+    
 
     const handleClick = (e) => {
         console.log("I have been clicked.", e);
     }
 
-    const handleClickAgain = (name) => {
-        console.log(`hello ${name}`)
+    // useState Hook
+    const [name, setName] = useState('mario');
+
+    const changeName = (givenName) => {
+        setName(givenName);
     }
  
     return (  
@@ -14,7 +21,8 @@ const Home = () => {
             {/* paranthesis invoke the function right away - handleClick(123) */}
             <button onClick={handleClick}>Click Me!</button>
 
-            <button onClick={() => handleClickAgain('Onur!')}>Click Me Again!</button>
+            <button onClick={() => changeName('onur')}>Change the name!</button>
+            <p> {name} </p>
         </div>
     );
 }
