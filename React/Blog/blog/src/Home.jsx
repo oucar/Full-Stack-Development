@@ -1,40 +1,20 @@
 import { useState, useEffect } from 'react';
 import BlogList from './BlogList';
+import useFetch from './useFetch';
 
 const Home = () => {
-    // ! blogs
-    // ? will be passed using Props (you can pass data to your child --> <BlogList/>)
-    const [blogs, setBlogs] = useState([]);
 
     // ! title
     const title = "All Blogs";
 
-    // ! loading screen
-    const [isPending, setIsPending] = useState(true);
-
-    // fires on every render
-    // ? [] -> only runs in the first render
-    // ? [total] -> only runs if the total changes 
-    useEffect(() => {
-        fetch('http://localhost:8000/blogs')
-            .then(res => {
-                // parses json into js
-                return res.json();
-            })
-            .then((data) => {
-                // console.log(data);
-                setBlogs(data);
-                setIsPending(false);
-            })
-
-        console.log("Use effect!")
-    }, [])
-
+    // call data: "blogs" in this context
+    const { data:blogs, isPending, error } = useFetch('http://localhost:8000/blogs');
 
     return (  
         <div className="home">
 
-            { isPending && <div>Loading...</div>}
+            {error && <div>{error}</div>}
+            {!error && isPending && <div>Loading...</div>}
 
             {/* passing props */}
             <BlogList blogs={blogs} title={title}/>
