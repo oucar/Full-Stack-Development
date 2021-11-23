@@ -1,41 +1,44 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import BlogList from './BlogList';
 
 const Home = () => {
+    // ! blogs
+    // ? will be passed using Props (you can pass data to your child --> <BlogList/>)
+    const [blogs, setBlogs] = useState([]);
 
-    
+    // ! title
+    const title = "All Blogs";
 
-    const handleClick = (e) => {
-        console.log("I have been clicked.", e);
-    }
+    // ! loading screen
+    const [isPending, setIsPending] = useState(true);
 
-    // useState Hook
-    // !NAME
-    const [name, setName] = useState('mario');
+    // fires on every render
+    // ? [] -> only runs in the first render
+    // ? [total] -> only runs if the total changes 
+    useEffect(() => {
+        fetch('http://localhost:8000/blogs')
+            .then(res => {
+                // parses json into js
+                return res.json();
+            })
+            .then((data) => {
+                // console.log(data);
+                setBlogs(data);
+                setIsPending(false);
+            })
 
-    const changeName = (givenName) => {
-        setName(givenName);
-    }
+        console.log("Use effect!")
+    }, [])
 
-    // !AGE
-    const [age, setAge] = useState(13);
 
-    const changeAge = (givenAge) => {
-        setAge(givenAge);
-    }
-
- 
     return (  
         <div className="home">
-            <h2>Homepage</h2>
-            {/* paranthesis invoke the function right away - handleClick(123) */}
-            <button onClick={handleClick}>Click Me!</button>
 
-            <button onClick={() => {
-                changeName('onur');
-                changeAge(18);
-            }}>useState Hooks</button>
-            <p> {name} </p>
-            <p> { age } </p>
+            { isPending && <div>Loading...</div>}
+
+            {/* passing props */}
+            <BlogList blogs={blogs} title={title}/>
+            {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'mario')} title="Mario's Blogs" /> */}
         </div>
     );
 }
