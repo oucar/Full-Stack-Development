@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom';
+
 // sfc (TAB)
 // stateles functional component
 
@@ -12,5 +14,5 @@ const  Navbar = () => {
         </nav>
      );
 }
- 
+
 export default Navbar;
