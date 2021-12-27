@@ -1,0 +1,2 @@
+- Cookie -> in client side (have maximum size)
+- Session -> in server side (works with session ID's)
