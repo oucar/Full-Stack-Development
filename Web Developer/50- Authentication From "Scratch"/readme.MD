@@ -14,3 +14,8 @@
     * impossible to find 2 outputs with same value
     * password hash functions are deliberately (kasten) slow.
     * one way functions, hashed password cannot be reversed by the user.
+
+* Password Salts (an extra safeguard)
+    * BCRYPT -> our hash function
+    * A salt is a random value added to the password before we hash it.
+    * It helps ensure unique hashed and mitigate common attacks
