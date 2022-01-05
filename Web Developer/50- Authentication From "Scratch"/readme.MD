@@ -16,6 +16,6 @@
     * one way functions, hashed password cannot be reversed by the user.
 
 * Password Salts (an extra safeguard)
-    * BCRYPT -> our hash function
+    * BCRYPT -> our hash function (npm i bcrypt)
     * A salt is a random value added to the password before we hash it.
     * It helps ensure unique hashed and mitigate common attacks
