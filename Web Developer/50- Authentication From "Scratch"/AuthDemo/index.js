@@ -12,6 +12,7 @@ app.set('views', 'views');
 
 // Auth
 const bcrypt = require('bcrypt');
+const { response } = require('express');
 
 app.use(express.urlencoded({extended : true}));
 app.use(session({secret: 'notagoodsecret'}));
@@ -34,10 +35,10 @@ app.get('/', (req, res) => {
 // ! Secret page
 app.get('/secret', (req, res) => {
     if(!req.session.user_id){
-        res.redirect('/login');
+        return res.redirect('/login');
     }
 
-    res.send("This is a really secret page!");
+    res.render('secret');
 })
 
 // ! Register page
@@ -76,9 +77,10 @@ app.post('/login', async (req, res) => {
     const isValidUser = await bcrypt.compare(password, user.password);
 
     if(isValidUser){
-        res.redirect('/secret');
         // session
         req.session.user_id = user._id;
+
+        res.redirect('/secret');
 
     } else{
         res.redirect('/login');
@@ -86,6 +88,12 @@ app.post('/login', async (req, res) => {
 
 })
 
+// Logout --> getting rid of the user id from the session
+// Should be a post route
+app.post('/logout', (req, res) => {
+    req.session.user_id = null;
+    res.redirect('/login');
+})
 
 
 
