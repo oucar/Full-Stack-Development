@@ -17,6 +17,16 @@ const { response } = require('express');
 app.use(express.urlencoded({extended : true}));
 app.use(session({secret: 'notagoodsecret'}));
 
+// Login middleware --> admin/ admin/set/ admin/doSomething...
+const requireLogin = (req, res, next) => {
+    // if not logged in
+    if(!req.session.user_id){
+        return res.redirect('/login');
+    }
+
+    // otherwise
+    next();
+}
 
 // Mongoose
 mongoose.connect('mongodb://localhost:27017/loginDemo', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -33,11 +43,13 @@ app.get('/', (req, res) => {
 })
 
 // ! Secret page
-app.get('/secret', (req, res) => {
-    if(!req.session.user_id){
-        return res.redirect('/login');
-    }
+app.get('/secret', requireLogin, (req, res) => {
+    res.render('secret');
+})
 
+// ! Another secret page
+// You cannot see these unless you're logged in
+app.get('/secret2', requireLogin, (req, res) => {
     res.render('secret');
 })
 
@@ -50,7 +62,6 @@ app.get('/register', (req, res) => {
 app.post('/register', async (req, res) => {
 
     const{password, username} = req.body;
-    const hash = await bcrypt.hash(password, 12);
     // res.send(hash);
 
     const user = new User({
@@ -71,18 +82,16 @@ app.get('/login', (req, res) => {
 
 // Login !
 app.post('/login', async (req, res) => {
-    const {password, username} = req.body;
-    const user = await User.findOne({ username })
-    // return true or false
-    const isValidUser = await bcrypt.compare(password, user.password);
+    const { username, password } = req.body;
+    const foundUser = await User.findAndValidate(username, password);
+    if (foundUser) {
+        //session
+        req.session.user_id = foundUser._id;
+        res.redirect('/secret');    
+    }
+    else {
 
-    if(isValidUser){
-        // session
-        req.session.user_id = user._id;
-        res.redirect('/secret');
-
-    } else{
-        res.redirect('/login');
+        res.redirect('/login')
     }
 
 })
