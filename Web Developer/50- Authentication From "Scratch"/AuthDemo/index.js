@@ -79,7 +79,6 @@ app.post('/login', async (req, res) => {
     if(isValidUser){
         // session
         req.session.user_id = user._id;
-
         res.redirect('/secret');
 
     } else{
