@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const session = require('express-session')
 
 // Models
 const User = require('./models/user');
@@ -12,8 +13,9 @@ app.set('views', 'views');
 // Auth
 const bcrypt = require('bcrypt');
 
-
 app.use(express.urlencoded({extended : true}));
+app.use(session({secret: 'notagoodsecret'}));
+
 
 // Mongoose
 mongoose.connect('mongodb://localhost:27017/loginDemo', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -31,7 +33,11 @@ app.get('/', (req, res) => {
 
 // ! Secret page
 app.get('/secret', (req, res) => {
-    res.send('You cannot see unless you are logged in.');
+    if(!req.session.user_id){
+        res.redirect('/login');
+    }
+
+    res.send("This is a really secret page!");
 })
 
 // ! Register page
@@ -51,6 +57,8 @@ app.post('/register', async (req, res) => {
         password: hash,
     })
     await user.save();
+    // session
+    req.session.user_id = user._id;
 
     res.redirect('/');
 })
@@ -60,7 +68,7 @@ app.get('/login', (req, res) => {
     res.render('login');
 })
 
-//
+// Login !
 app.post('/login', async (req, res) => {
     const {password, username} = req.body;
     const user = await User.findOne({ username })
@@ -68,9 +76,12 @@ app.post('/login', async (req, res) => {
     const isValidUser = await bcrypt.compare(password, user.password);
 
     if(isValidUser){
-        res.send(`Hello, ${user.username}, it's nice to see you.`);
+        res.redirect('/secret');
+        // session
+        req.session.user_id = user._id;
+
     } else{
-        res.send(`I don't know who you are.`);
+        res.redirect('/login');
     }
 
 })
