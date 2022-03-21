@@ -1,12 +1,17 @@
+import { NativeDate } from 'mongoose';
 import './ExpenseItem.css';
 
 function ExpenseItem() {
+
+
+
     return ( 
         <div className="expense-item">
-            <div>March 27</div>
+            {/* date object cannot be outputted as is  */}
+            <div>{expenseDate.toISOString()}</div>
             <div className="expense-item__description">
-                <h2>Some weird stuff</h2>
-                <div className="expense-item__price">$19.99</div>
+                <h2>{expenseTitle}</h2>
+                <div className="expense-item__price">${expenseAmount}</div>
             </div>
         </div>
     );
