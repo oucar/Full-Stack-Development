@@ -1,5 +1,6 @@
-import ExpenseItem from "./components/ExpenseItem";
+import Expenses from "./components/Expenses";
 
+// vscode shortcut to start: rfc
 function App() {
 
   const expenses = [
@@ -10,14 +11,13 @@ function App() {
     { id: 'e4', title: 'New Desk (Wooden)', amount: 450, date: new Date(2021, 5, 12) },
   ]
 
-
-
   return (
     // this is the end state
     <div>
       <h1>Let's get started!</h1>
-      {/* attributes, passing these to expense item */}
-      <ExpenseItem title={expenses[0].title} amount={expenses[0].amount} date={expenses[0].date}/>
+
+        <Expenses items={expenses}/>
+        
     </div>
   );
 }
