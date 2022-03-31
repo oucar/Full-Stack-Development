@@ -4,3 +4,4 @@
 * Declarative Approach -> React allows you to create reusable and reactice components consisting of html, css and js, no need to deal with event listener etc :)
 * You write jsx (developer friendly language), and it translated into regular html that browser can understand behind the scenes
 * Component is basically just a javascript function
+* Components can't just use data stored in other components, but you can pass data via props
