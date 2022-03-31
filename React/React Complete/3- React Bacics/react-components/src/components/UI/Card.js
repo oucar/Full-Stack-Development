@@ -1,6 +1,6 @@
 import './Card.css';
 
-export default function Card(props) {
+const Card = (props) => {
 
     // Using custom stuff with inner components might be painful
     // Use this logic to dynamically get the classname. Card component now has the 'card' class and whatever expenses you use there.
@@ -12,3 +12,5 @@ export default function Card(props) {
         <div className={classes}>{props.children}</div>
     )
 }
+
+export default Card;

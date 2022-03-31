@@ -1,7 +1,7 @@
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 
 // vscode shortcut to start: rfc
-function App() {
+const App = () => {
 
   const expenses = [
     { id: 'e0', title: 'Car Insurance', amount: 294.67, date: new Date(2022, 2, 27) },
