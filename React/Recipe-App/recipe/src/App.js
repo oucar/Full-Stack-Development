@@ -1,5 +1,6 @@
-import Home from "./pages/Pages";
+import Pages from "./pages/Pages";
 
+// Stuff gets rendered here, use rfce
 function App() {
   return (
     <div className="App">

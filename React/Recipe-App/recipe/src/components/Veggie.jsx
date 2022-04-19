@@ -1,3 +1,4 @@
+// Component, use rfc
 import React from 'react'
 
 export default function Veggie() {
