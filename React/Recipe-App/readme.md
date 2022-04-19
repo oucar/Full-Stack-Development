@@ -1,0 +1,1 @@
+* link to the spoonacular api (150 request per day): https://spoonacular.com/food-api

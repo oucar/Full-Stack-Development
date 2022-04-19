@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 import './ExpenseItem.css';
@@ -7,10 +6,11 @@ import './ExpenseItem.css';
 const ExpenseItem = (props) => {
 
     // useState is a hook, and only called inside a component 
-    let title = props.title;
-
+    // a, setA
+    const [title, setTitle] = useState(props.title);
+    
     const clickHandler = () => {
-        title = 'Updated.';
+        setTitle('Updated!');
     };
 
 
