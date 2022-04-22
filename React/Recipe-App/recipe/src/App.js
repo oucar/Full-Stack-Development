@@ -1,6 +1,7 @@
 import Pages from "./pages/Pages";
 import Category from "./pages/Category";
-import './index.css'
+import './index.css';
+import { BrowserRouter } from "react-router-dom";
 
 // framer-motion: animation
 // react-router-dom: routing
@@ -9,8 +10,10 @@ import './index.css'
 function App() {
   return (
     <div className="App">
-      <Category/>
-      <Pages/>
+      <BrowserRouter>
+        <Category/>
+        <Pages/>
+      </BrowserRouter>
     </div>
   );
 }
