@@ -1,11 +1,14 @@
 import Home from "./Home";
-import React from 'react'
+import React from 'react';
+import { Route, Routes } from "react-router-dom";
 
 // Stuff gets rendered here, use rfce
 function Pages() {
   return (
     <div>
-        <Home/>
+        <Routes>
+          <Home/>
+        </Routes>
     </div>
   )
 }

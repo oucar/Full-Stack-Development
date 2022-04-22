@@ -1,4 +1,5 @@
 import Pages from "./pages/Pages";
+import Category from "./pages/Category";
 import './index.css'
 
 // framer-motion: animation
@@ -8,7 +9,7 @@ import './index.css'
 function App() {
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      <Category/>
       <Pages/>
     </div>
   );

@@ -15,26 +15,29 @@ import '@splidejs/splide/dist/css/splide.min.css'
 
 export default function Veggie() {
 
+    // apiKey
+    const api_key = process.env.REACT_APP_API_KEY;
+
     // useState -> we're handling an array ([])
-    const [popular, setPopular] = useState([]);
+    const [veggie, setVeggie] = useState([]);
 
     // getPopular will be called everytime this component gets rendered
     useEffect(() => {
-        getPopular();
+        getVeggie();
     }, [])
 
-    const getPopular = async () => {
+    const getVeggie = async () => {
         // fetch, and turn the data into json format
         // fetched data will be stored into the local storage.
-        const check = localStorage.getItem("popular");
+        const check = localStorage.getItem("veggie");
         if (check) {
-            setPopular(JSON.parse(check));
+            setVeggie(JSON.parse(check));
         } else {
-            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${api_key}&number=10`);
+            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${api_key}&number=9&tags=vegetarian`);
             const data = await api.json();
-            setPopular(data.recipes);
+            setVeggie(data.recipes);
 
-            localStorage.setItem("popular", JSON.stringify(data.recipes));
+            localStorage.setItem("veggie", JSON.stringify(data.recipes));
             console.log(data.recipes);
         }
     }
@@ -49,15 +52,15 @@ export default function Veggie() {
     {/* Each individual div needs a key, so that they can be removed from the ui when needed */}
 
     <Wrapper>
-    <h3>Popular Picks</h3>
+    <h3>Our Vegeterian Picks</h3>
         <Splide options={{
-            perPage:3,
+            perPage:5,
             // arrows: false,
             // pagination: false,
             // drag: 'free',
             gap: '5rem',
         }}>
-            {popular.map((recipe => {
+            {veggie.map((recipe => {
                 return(
                     <SplideSlide key={recipe.id}>
                         <Card key={recipe.id}>
