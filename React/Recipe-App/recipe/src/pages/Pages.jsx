@@ -8,8 +8,8 @@ function Pages() {
   return (
     <Routes>
       <Route path="/" element={ <Home/> } />
-      {/* ! Only looks for /cuisine...! Doesn't look what's after. */}
-      <Route path="/cuisine" element={ <Cuisine/> }/>
+      {/* ! Only looks for /cuisine...! Doesn't look what's after. -> Will be American, Italian, etc. */}
+      <Route path="/cuisine/:type" element={ <Cuisine/> }/>
     </Routes>
   )
 }

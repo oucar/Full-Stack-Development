@@ -1,7 +1,7 @@
 import React from 'react'
 // https://react-icons.github.io/
-import { FaPizzaSlice, FaHamburger, FaLeaf, FaIceCream } from 'react-icons/fa';
-import { GiNoodles, GiChopsticks } from 'react-icons/gi';
+import { FaPizzaSlice, FaHamburger } from 'react-icons/fa';
+import { GiNoodles, GiChopsticks, GiTacos } from 'react-icons/gi';
 import styled from "styled-components";
 import { List } from "./styled/List";
 import { NavLink } from "react-router-dom";
@@ -25,13 +25,9 @@ export default function Category() {
             <GiChopsticks/>
             <h4>Japanese</h4>
         </NavLink>
-        <NavLink to={'/cuisine/Desserts'}>
-            <FaIceCream/>
-            <h4>Desserts</h4>
-        </NavLink>
-        <NavLink to={'/cuisine/Vegeterian'}>
-            <FaLeaf/>
-            <h4>Vegeterian</h4>
+        <NavLink to={'/cuisine/Mexican'}>
+            <GiTacos/>
+            <h4>Mexican</h4>
         </NavLink>
     </List>
   )
