@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const Gradient = styled.div`
     z-index: 3;
     position: absolute;

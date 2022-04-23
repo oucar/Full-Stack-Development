@@ -1,7 +1,8 @@
 import Pages from "./pages/Pages";
-import Category from "./pages/Category";
+import Category from "./components/Category";
 import './index.css';
 import { BrowserRouter } from "react-router-dom";
+import Search from './components/Search';
 
 // framer-motion: animation
 // react-router-dom: routing
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Search/>
         <Category/>
         <Pages/>
       </BrowserRouter>
